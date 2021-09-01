@@ -14,7 +14,7 @@ ActiveRecord::Schema.define(version: 2021_08_31_075201) do
 
   create_table "records", force: :cascade do |t|
     t.integer "user_id", null: false
-    t.string "taining_name", null: false
+    t.string "name", null: false
     t.integer "weight", default: 0, null: false
     t.integer "rep_count", default: 0, null: false
     t.text "note", default: ""
