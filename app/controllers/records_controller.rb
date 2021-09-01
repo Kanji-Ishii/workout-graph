@@ -1,4 +1,4 @@
-class RecordController < ApplicationController
+class RecordsController < ApplicationController
   def new
     @record = Record.new
     @exercise = Exercise.all
