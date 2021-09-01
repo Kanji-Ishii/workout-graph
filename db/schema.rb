@@ -10,18 +10,28 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_075201) do
+ActiveRecord::Schema.define(version: 2021_09_01_074610) do
+
+  create_table "exercises", force: :cascade do |t|
+    t.integer "uesr_id", null: false
+    t.string "name", null: false
+    t.integer "records_count", default: 0, null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["uesr_id"], name: "index_exercises_on_uesr_id"
+  end
 
   create_table "records", force: :cascade do |t|
-    t.integer "user_id", null: false
-    t.string "name", null: false
+    t.integer "exercise_id", null: false
+    t.integer "name_id", null: false
     t.integer "weight", default: 0, null: false
     t.integer "rep_count", default: 0, null: false
     t.text "note", default: ""
-    t.integer "RM", default: 0
+    t.integer "RM", default: 0, null: false
+    t.date "date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["user_id"], name: "index_records_on_user_id"
+    t.index ["exercise_id"], name: "index_records_on_exercise_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -37,5 +47,6 @@ ActiveRecord::Schema.define(version: 2021_08_31_075201) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "records", "users"
+  add_foreign_key "exercises", "uesrs"
+  add_foreign_key "records", "exercises"
 end
