@@ -7,7 +7,7 @@
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
 
   <%= link_to "グラフを見る", exercises_path, method: :get %>
-  <%= link_to "記録する",      records_path, method: :get %>
+  <%= link_to "記録する",  new_record_path, method: :get %>
   
 <% else %>
   <h2> 現在ログインしていません </h2>

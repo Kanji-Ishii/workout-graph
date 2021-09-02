@@ -1645,3 +1645,389 @@ puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
 puma (4.3.8) lib/puma/server.rb:472:in `process_client'
 puma (4.3.8) lib/puma/server.rb:328:in `block in run'
 puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/" for ::1 at 2021-09-02 16:47:42 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:4
+  Rendered home/index.html.erb within layouts/application (Duration: 315.4ms | Allocations: 168814)
+Completed 500 Internal Server Error in 329ms (ActiveRecord: 0.9ms | Allocations: 171920)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `records_new_path' for #<#<Class:0x00007facf3337230>:0x00007facf3335250>
+Did you mean?  records_path):
+     7:   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
+     8: 
+     9:   <%= link_to "グラフを見る", exercises_path, method: :get %>
+    10:   <%= link_to "記録する",      records_new_path, method: :get %>
+    11:   
+    12: <% else %>
+    13:   <h2> 現在ログインしていません </h2>
+  
+app/views/home/index.html.erb:10
+Started GET "/" for ::1 at 2021-09-02 16:47:45 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:4
+  Rendered home/index.html.erb within layouts/application (Duration: 273.3ms | Allocations: 161138)
+Completed 500 Internal Server Error in 275ms (ActiveRecord: 0.2ms | Allocations: 161589)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `records_new_path' for #<#<Class:0x00007facf3337230>:0x00007facf357fc40>
+Did you mean?  records_path):
+     7:   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
+     8: 
+     9:   <%= link_to "グラフを見る", exercises_path, method: :get %>
+    10:   <%= link_to "記録する",      records_new_path, method: :get %>
+    11:   
+    12: <% else %>
+    13:   <h2> 現在ログインしていません </h2>
+  
+app/views/home/index.html.erb:10
+Started GET "/users/sign_in" for ::1 at 2021-09-02 16:47:47 +0900
+Processing by Devise::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 8ms (ActiveRecord: 0.2ms | Allocations: 3950)
+
+
+Started GET "/" for ::1 at 2021-09-02 16:49:23 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:4
+  Rendered home/index.html.erb within layouts/application (Duration: 326.2ms | Allocations: 168879)
+Completed 500 Internal Server Error in 339ms (ActiveRecord: 1.0ms | Allocations: 171890)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_records_path' for #<#<Class:0x00007ff8e4d457a8>:0x00007ff8e53cb9b0>
+Did you mean?  new_record_path):
+     7:   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
+     8: 
+     9:   <%= link_to "グラフを見る", exercises_path, method: :get %>
+    10:   <%= link_to "記録する",  new_records_path, method: :get %>
+    11:   
+    12: <% else %>
+    13:   <h2> 現在ログインしていません </h2>
+  
+app/views/home/index.html.erb:10
+Started GET "/" for ::1 at 2021-09-02 16:50:45 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:4
+  Rendered home/index.html.erb within layouts/application (Duration: 280.1ms | Allocations: 161484)
+Completed 500 Internal Server Error in 299ms (ActiveRecord: 0.2ms | Allocations: 162775)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_records_path' for #<#<Class:0x00007ff8e4e67ed8>:0x00007ff8e4e664c0>
+Did you mean?  new_record_path):
+     7:   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
+     8: 
+     9:   <%= link_to "グラフを見る", exercises_path, method: :get %>
+    10:   <%= link_to "記録する",  new_records_path, method: :post %>
+    11:   
+    12: <% else %>
+    13:   <h2> 現在ログインしていません </h2>
+  
+app/views/home/index.html.erb:10
+Started GET "/" for ::1 at 2021-09-02 16:53:40 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:4
+  Rendered home/index.html.erb within layouts/application (Duration: 258.5ms | Allocations: 161427)
+Completed 500 Internal Server Error in 264ms (ActiveRecord: 0.3ms | Allocations: 162704)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_records_path' for #<#<Class:0x00007ff8b58b55a0>:0x00007ff8b58c3c90>
+Did you mean?  new_record_path):
+     7:   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
+     8: 
+     9:   <%= link_to "グラフを見る", exercises_path, method: :get %>
+    10:   <%= link_to "記録する",  new_records_path, method: :get %>
+    11:   
+    12: <% else %>
+    13:   <h2> 現在ログインしていません </h2>
+  
+app/views/home/index.html.erb:10
+Started GET "/" for ::1 at 2021-09-02 16:53:42 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:4
+  Rendered home/index.html.erb within layouts/application (Duration: 219.9ms | Allocations: 161165)
+Completed 500 Internal Server Error in 221ms (ActiveRecord: 0.2ms | Allocations: 161603)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_records_path' for #<#<Class:0x00007ff8b58b55a0>:0x00007ff8d6d74c50>
+Did you mean?  new_record_path):
+     7:   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
+     8: 
+     9:   <%= link_to "グラフを見る", exercises_path, method: :get %>
+    10:   <%= link_to "記録する",  new_records_path, method: :get %>
+    11:   
+    12: <% else %>
+    13:   <h2> 現在ログインしていません </h2>
+  
+app/views/home/index.html.erb:10
+Started GET "/" for ::1 at 2021-09-02 16:53:50 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:4
+  Rendered home/index.html.erb within layouts/application (Duration: 258.0ms | Allocations: 161132)
+Completed 500 Internal Server Error in 259ms (ActiveRecord: 0.1ms | Allocations: 161570)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `new_records_path' for #<#<Class:0x00007ff8b58b55a0>:0x00007ff8e552fba8>
+Did you mean?  new_record_path):
+     7:   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
+     8: 
+     9:   <%= link_to "グラフを見る", exercises_path, method: :get %>
+    10:   <%= link_to "記録する",  new_records_path, method: :get %>
+    11:   
+    12: <% else %>
+    13:   <h2> 現在ログインしていません </h2>
+  
+app/views/home/index.html.erb:10
+Started GET "/" for ::1 at 2021-09-02 16:54:13 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:4
+  Rendered home/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1272)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 28ms (Views: 26.2ms | ActiveRecord: 0.2ms | Allocations: 9067)
+
+
+Started GET "/records/new" for ::1 at 2021-09-02 16:54:15 +0900
+Processing by RecordsController#new as HTML
+  Parameters: {"authenticity_token"=>"p8bKNIZdZtFv9/gbD/xnB9/tqrrbJGEFN3T1mm6x/Hbf4mceW1BBimtK/dIPAjepTAePt6EFLhq20oZ/+k8g+g=="}
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1189)
+Completed 500 Internal Server Error in 16ms (ActiveRecord: 0.8ms | Allocations: 11602)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h2>New Recoed</h2>
+
+<%= form_with( model: @record do |f|) %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.collection_select( :name_id, @exercise, :id, :name {prompt: "種目を選択してください"}) :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date, include_blank: true, selected: Date.today %>
+  </div>
+
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.number_field :weight %>
+  </div>
+
+  <div class="field">
+    <%= f.label :reps_count %><br />
+    <%= f.number_field :reps_count %>
+  </div>
+
+  <div class="field">
+    <%= f.label :note %><br />
+    <%= f.text_area :note %>
+  </div>
+
+  <div>
+    <%= f.submit "Save Record" %>
+  </div>
+
+<% end %>
+
+):
+1:    <h2>New Recoed</h2>
+2:    
+3:    <%= form_with( model: @record do |f|) %>
+4:      <div class="field">
+5:        <%= f.label :name %><br />
+6:        <%= f.collection_select( :name_id, @exercise, :id, :name {prompt: "種目を選択してください"}) :name %>
+7:      </div>
+8:    
+9:      <div class="field">
+10:        <%= f.label :date %><br />
+11:        <%= f.date_select :date, include_blank: true, selected: Date.today %>
+12:      </div>
+13:    
+14:      <div class="field">
+15:        <%= f.label :weight %><br />
+16:        <%= f.number_field :weight %>
+17:      </div>
+18:    
+19:      <div class="field">
+20:        <%= f.label :reps_count %><br />
+21:        <%= f.number_field :reps_count %>
+22:      </div>
+23:    
+24:      <div class="field">
+25:        <%= f.label :note %><br />
+26:        <%= f.text_area :note %>
+27:      </div>
+28:    
+29:      <div>
+30:        <%= f.submit "Save Record" %>
+31:      </div>
+32:    
+33:    <% end %>
+  
+app/views/records/new.html.erb:3: syntax error, unexpected do, expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '{', expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+app/views/records/new.html.erb:33: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:35: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:3: syntax error, unexpected do, expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '{', expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+app/views/records/new.html.erb:33: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:35: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:3: syntax error, unexpected do, expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '{', expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+app/views/records/new.html.erb:33: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:35: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:3: syntax error, unexpected do, expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '{', expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+app/views/records/new.html.erb:33: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:35: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:3: syntax error, unexpected do, expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '{', expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+app/views/records/new.html.erb:33: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:35: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:3: syntax error, unexpected do, expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '{', expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+app/views/records/new.html.erb:33: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:35: syntax error, unexpected end, expecting ')'
+Started GET "/records/new" for ::1 at 2021-09-02 16:54:15 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RecordsController#new as HTML
+  Parameters: {"authenticity_token"=>"p8bKNIZdZtFv9/gbD/xnB9/tqrrbJGEFN3T1mm6x/Hbf4mceW1BBimtK/dIPAjepTAePt6EFLhq20oZ/+k8g+g=="}
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 1309)
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1908)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <h2>New Recoed</h2>
+
+<%= form_with( model: @record do |f|) %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.collection_select( :name_id, @exercise, :id, :name {prompt: "種目を選択してください"}) :name %>
+  </div>
+
+  <div class="field">
+    <%= f.label :date %><br />
+    <%= f.date_select :date, include_blank: true, selected: Date.today %>
+  </div>
+
+  <div class="field">
+    <%= f.label :weight %><br />
+    <%= f.number_field :weight %>
+  </div>
+
+  <div class="field">
+    <%= f.label :reps_count %><br />
+    <%= f.number_field :reps_count %>
+  </div>
+
+  <div class="field">
+    <%= f.label :note %><br />
+    <%= f.text_area :note %>
+  </div>
+
+  <div>
+    <%= f.submit "Save Record" %>
+  </div>
+
+<% end %>
+
+):
+1:    <h2>New Recoed</h2>
+2:    
+3:    <%= form_with( model: @record do |f|) %>
+4:      <div class="field">
+5:        <%= f.label :name %><br />
+6:        <%= f.collection_select( :name_id, @exercise, :id, :name {prompt: "種目を選択してください"}) :name %>
+7:      </div>
+8:    
+9:      <div class="field">
+10:        <%= f.label :date %><br />
+11:        <%= f.date_select :date, include_blank: true, selected: Date.today %>
+12:      </div>
+13:    
+14:      <div class="field">
+15:        <%= f.label :weight %><br />
+16:        <%= f.number_field :weight %>
+17:      </div>
+18:    
+19:      <div class="field">
+20:        <%= f.label :reps_count %><br />
+21:        <%= f.number_field :reps_count %>
+22:      </div>
+23:    
+24:      <div class="field">
+25:        <%= f.label :note %><br />
+26:        <%= f.text_area :note %>
+27:      </div>
+28:    
+29:      <div>
+30:        <%= f.submit "Save Record" %>
+31:      </div>
+32:    
+33:    <% end %>
+  
+app/views/records/new.html.erb:3: syntax error, unexpected do, expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '{', expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+app/views/records/new.html.erb:33: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:35: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:3: syntax error, unexpected do, expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '{', expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+app/views/records/new.html.erb:33: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:35: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:3: syntax error, unexpected do, expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '{', expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+app/views/records/new.html.erb:33: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:35: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:3: syntax error, unexpected do, expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '{', expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+app/views/records/new.html.erb:33: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:35: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:3: syntax error, unexpected do, expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '{', expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+app/views/records/new.html.erb:33: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:35: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:3: syntax error, unexpected do, expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '{', expecting ')'
+app/views/records/new.html.erb:6: syntax error, unexpected '}', expecting ')'
+app/views/records/new.html.erb:33: syntax error, unexpected end, expecting ')'
+app/views/records/new.html.erb:35: syntax error, unexpected end, expecting ')'
