@@ -1,0 +1,11 @@
+<h1>Workout Graph</h1>
+<h2>グラフページ</h2>
+
+<h2> 現在 <%= current_user.name %> さんがログインしています </h2> 
+<h4> メールアドレス： <%= current_user.email %> </h4>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+
+
+<%# @exercise.each do |e| %>
+  <%=# "#{e.name}の1RMは#{e.record.RM}です。" %>
+<%# end %>
