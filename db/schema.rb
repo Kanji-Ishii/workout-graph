@@ -13,19 +13,19 @@
 ActiveRecord::Schema.define(version: 2021_09_01_074610) do
 
   create_table "exercises", force: :cascade do |t|
-    t.integer "uesr_id", null: false
+    t.integer "user_id", null: false
     t.string "name", null: false
-    t.integer "records_count", default: 0, null: false
+    t.integer "records_count", default: 0
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["uesr_id"], name: "index_exercises_on_uesr_id"
+    t.index ["user_id"], name: "index_exercises_on_user_id"
   end
 
   create_table "records", force: :cascade do |t|
     t.integer "exercise_id", null: false
     t.integer "name_id", null: false
     t.integer "weight", default: 0, null: false
-    t.integer "rep_count", default: 0, null: false
+    t.integer "reps_count", default: 0, null: false
     t.text "note", default: ""
     t.integer "RM", default: 0, null: false
     t.date "date", null: false
@@ -47,6 +47,6 @@ ActiveRecord::Schema.define(version: 2021_09_01_074610) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "exercises", "uesrs"
+  add_foreign_key "exercises", "users"
   add_foreign_key "records", "exercises"
 end

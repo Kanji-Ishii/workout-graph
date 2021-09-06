@@ -1,9 +1,12 @@
-<h2>New Recoed</h2>
+<h2>記録</h2>
+<h2> ログインユーザー： <%= current_user.name %> さん </h2>
+<%= link_to "グラフを見る", exercises_path, method: :get %>
+<%= link_to "新しい種目を記録", new_exercise_path, method: :get %>
 
-<%= form_with( model: @record do |f|) %>
+<%= form_with model: @record, local: true do |f| %>
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.collection_select( :name_id, @exercise, :id, :name {prompt: "種目を選択してください"}) :name %>
+    <%= f.collection_select(:name_id, Exercise.all, :id, :name, {prompt: "種目を選択してください"}) %>
   </div>
 
   <div class="field">

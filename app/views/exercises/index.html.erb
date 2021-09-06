@@ -3,9 +3,9 @@
 
 <h2> ログインユーザー： <%= current_user.name %> さん </h2>
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<%= link_to "新しい種目を記録", new_exercise_path, method: :get %>
 
-
-<%# @exercise.each do |e| %>
+<%# @exercises.each do |e| %>
   <%# "#{e.name}の1RMは#{e.record.RM}です。" %>
 <%# end %>
 
