@@ -5,9 +5,13 @@
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
 <%= link_to "新しい種目を記録", new_exercise_path, method: :get %>
 
-<%# @exercises.each do |e| %>
-  <%# "#{e.name}の1RMは#{e.record.RM}です。" %>
-<%# end %>
-
 <%= link_to "記録一覧", records_path, method: :get %>
 <%# 種目名をクリックして記録一覧ページへ遷移　%>
+
+<% @exercises.map do |num| %>
+  <%# @exercises.name %>
+  <%# exercise_type = Record.where(name_id: num) %>
+  <%# graph = exercise_type.pluck(:date, :RM) %>
+  <% graph = Record.where(name_id: num).pluck(:date, :RM) %>
+  <%= line_chart graph, min: 0, max: 10%>
+<% end %>
