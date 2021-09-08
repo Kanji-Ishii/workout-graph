@@ -24,10 +24,10 @@ ActiveRecord::Schema.define(version: 2021_09_01_074610) do
   create_table "records", force: :cascade do |t|
     t.integer "exercise_id", null: false
     t.integer "name_id", null: false
-    t.integer "weight", default: 0, null: false
+    t.float "weight", default: 0.0, null: false
     t.integer "reps_count", default: 0, null: false
     t.text "note", default: ""
-    t.integer "RM", default: 0, null: false
+    t.float "RM", default: 0.0, null: false
     t.date "date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

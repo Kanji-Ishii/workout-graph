@@ -5,7 +5,6 @@ class Record < ApplicationRecord
   validates :weight, :reps_count, :RM, numericality: { greater_than: 0 }
 
   before_validation do
-    self.RM = weight * ( reps_count / 40 + 1 )
+    self.RM = weight / ( ( 102.89 - 2.9119 * reps_count + 0.0319 * reps_count ** 2 - 0.000035399 * reps_count ** 3 ) / 100 )
   end
-
 end

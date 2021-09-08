@@ -13,5 +13,6 @@
   <%# exercise_type = Record.where(name_id: num) %>
   <%# graph = exercise_type.pluck(:date, :RM) %>
   <% graph = Record.where(name_id: num).pluck(:date, :RM) %>
-  <%= line_chart graph, min: 0, max: 10%>
+  <%= line_chart graph, min: 30, max: 45 %>
+  <%# line_chart graph, min: 0, max: 50 範囲指定 %>
 <% end %>

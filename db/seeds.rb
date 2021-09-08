@@ -1,18 +1,20 @@
-User.create!( { name: 'sample', email: 'sample@sample.com'} )
+User.create!(name: 'sample', email: 'sample@sample.com', password: 'foobar')
 
-User.all.each do |exercise|
-  user.exercises.create!( name: 'dumbel press', count: 12)
-  user.exercises.create!( name: 'dumbel press', count: 12)
-  user.exercises.create!( name: 'arm curl', count: 12)
-  user.exercises.create!( name: 'triceps extension', count: 12)
+User.all.each do |user|
+  user.exercises.create!(id: 0, name: 'dumbel press',      records_count: 15)
+  user.exercises.create!(id: 1, name: 'dumbel fly',        records_count: 15)
+  user.exercises.create!(id: 2, name: 'arm curl',          records_count: 15)
+  user.exercises.create!(id: 3, name: 'triceps extension', records_count: 15)
 end
 
-Exercise.all.each do |record|
-  exercise.records.create!( name_id: 'dumbel press', 
-                             weight: 12,
-                         reps_count: 12,
-                               note: 'Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod ',
-                                 RM: 12,
-                               date: 2021-09-05
-                          )
+require "csv"
+CSV.foreach('db/seed_record.csv') do |row|
+  Record.create(exercise_id: row[0],
+                    name_id: row[1],
+                     weight: row[2],
+                 reps_count: row[3],
+                       note: row[4],
+                         RM: row[5],
+                       date: row[6]
+                )
 end

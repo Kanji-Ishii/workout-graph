@@ -23,5 +23,4 @@ class RecordsController < ApplicationController
     def record_params
       params.require(:record).permit(:name_id, :date, :weight, :reps_count, :note, :RM, :exercise_id)
     end
-
 end
