@@ -21281,3 +21281,239 @@ Processing by RecordsController#index as HTML
 Completed 200 OK in 16ms (Views: 11.9ms | ActiveRecord: 0.6ms | Allocations: 7915)
 
 
+Started GET "/" for ::1 at 2021-09-09 21:22:04 +0900
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:4
+  Rendered home/index.html.erb within layouts/application (Duration: 13.8ms | Allocations: 8434)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 49ms (Views: 38.0ms | ActiveRecord: 1.3ms | Allocations: 19715)
+
+
+Started GET "/exercises" for ::1 at 2021-09-09 21:22:06 +0900
+Processing by ExercisesController#index as HTML
+  Parameters: {"authenticity_token"=>"Lnht3cM6hbsQYFIWPbt7ZBXEU73mKBU0Bf9SzIGJScZbH7mUPDaExCyAfM0ZmIWgEW1JUcdOCRdDk/GQW+iIYg=="}
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/exercises/index.html.erb:4
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:11:in `map'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:16
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:16
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:16
+  Rendered exercises/index.html.erb within layouts/application (Duration: 23.5ms | Allocations: 11639)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 28.9ms | ActiveRecord: 2.1ms | Allocations: 17999)
+
+
+Started GET "/exercises/new" for ::1 at 2021-09-09 21:22:15 +0900
+Processing by ExercisesController#new as HTML
+  Parameters: {"authenticity_token"=>"2b+BQ4GXffek3uvxw7OvtenAIybbpnoTElowVeO0yNKs2FUKfpt8iJg+xSrnkFFx7Wk5yvrAZjBUNpMJOdUJdg=="}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercises_controller.rb:7:in `new'
+  Rendering exercises/new.html.erb within layouts/application
+  Rendered exercises/new.html.erb within layouts/application (Duration: 11.7ms | Allocations: 3167)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 17.3ms | ActiveRecord: 0.3ms | Allocations: 11082)
+
+
+Started GET "/exercises" for ::1 at 2021-09-09 21:22:17 +0900
+Processing by ExercisesController#index as HTML
+  Parameters: {"authenticity_token"=>"xTPpwMvjW8HtaWJd0/+S6Gs8SRbKQdf6uIDlqe5tkLKwVD2JNO9avtGJTIb33Gwsb5VT+usny9n+7Eb1NAxRFg=="}
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/exercises/index.html.erb:4
+  [1m[36mExercise Load (0.3ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:11:in `map'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:16
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:16
+  Rendered exercises/index.html.erb within layouts/application (Duration: 29.1ms | Allocations: 6415)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 34.2ms | ActiveRecord: 1.2ms | Allocations: 10517)
+
+
+Started GET "/records" for ::1 at 2021-09-09 21:22:18 +0900
+Processing by RecordsController#index as HTML
+  Parameters: {"authenticity_token"=>"8MT1xTHStKa2csNCud7KaeMVujWw6viWM6c+DFR1djaFoyGMzt612YqS7Zmd/TSt57yg2ZGM5LV1y51QjhS3kg=="}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 652)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Exercise without an ID):
+  
+app/controllers/records_controller.rb:5:in `index'
+Started GET "/exercises" for ::1 at 2021-09-09 21:22:31 +0900
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/exercises/index.html.erb:4
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:11:in `map'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:16
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:16
+  Rendered exercises/index.html.erb within layouts/application (Duration: 13.0ms | Allocations: 6430)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 18.7ms | ActiveRecord: 1.3ms | Allocations: 10569)
+
+
+Started GET "/records" for ::1 at 2021-09-09 21:22:37 +0900
+Processing by RecordsController#index as HTML
+  Parameters: {"authenticity_token"=>"a/HS4f2/TVHfAkeahpAVyrwrT13ww05TVsJvvqJJlEYelgaoArNMLuPiaUGis+sOuIJVsdGlUnAQrszieChV4g=="}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 688)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Exercise without an ID):
+  
+app/controllers/records_controller.rb:5:in `index'
+Started GET "/records" for ::1 at 2021-09-09 21:23:34 +0900
+Processing by RecordsController#index as HTML
+  Parameters: {"authenticity_token"=>"a/HS4f2/TVHfAkeahpAVyrwrT13ww05TVsJvvqJJlEYelgaoArNMLuPiaUGis+sOuIJVsdGlUnAQrszieChV4g=="}
+Completed 404 Not Found in 1ms (ActiveRecord: 0.0ms | Allocations: 681)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Exercise without an ID):
+  
+app/controllers/records_controller.rb:5:in `index'
+Started GET "/records?exercise_id=3" for ::1 at 2021-09-09 21:23:37 +0900
+Processing by RecordsController#index as HTML
+  Parameters: {"authenticity_token"=>"a/HS4f2/TVHfAkeahpAVyrwrT13ww05TVsJvvqJJlEYelgaoArNMLuPiaUGis+sOuIJVsdGlUnAQrszieChV4g==", "exercise_id"=>"3"}
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:5:in `index'
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/records/index.html.erb:4
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/records/index.html.erb:11:in `map'
+  Rendered records/index.html.erb within layouts/application (Duration: 11.9ms | Allocations: 8764)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 24ms (Views: 19.3ms | ActiveRecord: 1.1ms | Allocations: 14722)
+
+
+Started GET "/exercises" for ::1 at 2021-09-09 21:23:39 +0900
+Processing by ExercisesController#index as HTML
+  Parameters: {"authenticity_token"=>"YVgfZ4khnylnl6AQsgJx6J23Id/WsCvG1/O+Quj3ykoUP8sudi2eVlt3jsuWIY8smR47M/fWN+WRnx0eMpYL7g=="}
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/exercises/index.html.erb:4
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:9:in `map'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:14
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:14
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:14
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:14
+  Rendered exercises/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 6642)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 30ms (Views: 26.7ms | ActiveRecord: 1.0ms | Allocations: 11388)
+
+
+Started GET "/records?exercise_id=3" for ::1 at 2021-09-09 21:23:41 +0900
+Processing by RecordsController#index as HTML
+  Parameters: {"authenticity_token"=>"nWTGr+HdIVEpLBJrGXJtjMqkaDSIBTIh91c154UJGXfoAxLmHtEgLhXMPLA9UZNIzg1y2KljLgKxO5a7X2jY0w==", "exercise_id"=>"3"}
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:5:in `index'
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/records/index.html.erb:4
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/records/index.html.erb:11:in `map'
+  Rendered records/index.html.erb within layouts/application (Duration: 5.7ms | Allocations: 2122)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 11.5ms | ActiveRecord: 0.7ms | Allocations: 7032)
+
+
+Started GET "/records/new" for ::1 at 2021-09-09 21:23:43 +0900
+Processing by RecordsController#new as HTML
+  Parameters: {"authenticity_token"=>"XhO32Momp233DOLUqEvgR7fsbmYnQywi0z8i/4OgGakrdGORNSqmEsvszA+MaB6Ds0V0igYlMAGVU4GjWcHYDQ=="}
+  Rendering records/new.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/records/new.html.erb:2
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/records/new.html.erb:9
+  Rendered records/new.html.erb within layouts/application (Duration: 19.5ms | Allocations: 9389)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 24.6ms | ActiveRecord: 0.4ms | Allocations: 13537)
+
+
+Started GET "/exercises" for ::1 at 2021-09-09 21:23:48 +0900
+Processing by ExercisesController#index as HTML
+  Parameters: {"authenticity_token"=>"ty9Z9bA2leWBWydiz6IwRgRMV+zBZYpYz8Co2h4VKc/CSI28TzqUmr27Cbnrgc6CAOVNAOADlnuJrAuGxHToaw=="}
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/exercises/index.html.erb:4
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:9:in `map'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:14
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:14
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:14
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:14
+  Rendered exercises/index.html.erb within layouts/application (Duration: 11.1ms | Allocations: 6377)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 1.1ms | Allocations: 10473)
+
+
+Started GET "/records?exercise_id=3" for ::1 at 2021-09-09 21:23:53 +0900
+Processing by RecordsController#index as HTML
+  Parameters: {"authenticity_token"=>"GUWyPro0xwlhegn/sWjIghDj3yuePIsPaD8MMb3Y5tFsImZ3RTjGdl2aJySVSzZGFErFx79alywuU69tZ7kndQ==", "exercise_id"=>"3"}
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:5:in `index'
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/records/index.html.erb:4
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/records/index.html.erb:11:in `map'
+  Rendered records/index.html.erb within layouts/application (Duration: 4.9ms | Allocations: 2116)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 0.8ms | Allocations: 7019)
+
+
+Started GET "/exercises" for ::1 at 2021-09-09 21:24:05 +0900
+Processing by ExercisesController#index as HTML
+  Parameters: {"authenticity_token"=>"lJGL83W2rks/LMk6whz9UrYsgaHiw2Vcn6X0/7AjDhfh9l+6irqvNAPM5+HmPwOWsoWbTcOleX/ZyVejakLPsw=="}
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/exercises/index.html.erb:4
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:9:in `map'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:14
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:14
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:14
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:14
+  Rendered exercises/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 6368)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.9ms | ActiveRecord: 1.2ms | Allocations: 10452)
+
+

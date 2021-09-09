@@ -2,7 +2,6 @@
 <h2> ログインユーザー： <%= current_user.name %> さん </h2>
 <%= link_to "グラフを見る", exercises_path, method: :get %>
 
-
 <%= form_with model: @exercise, local: true do |f| %>
   <div class="field">
     <%= f.label :name %><br />
