@@ -6,4 +6,9 @@
 <%= link_to "グラフを見る", exercises_path, method: :get %>
 <%= link_to "記録する", new_record_path, method: :get %>
 
-<%# @exercise.record.all %>
+<br>
+<%= @exercise.name %>
+<% @records.map do |record| %> <br>
+  <%= "#{record.date} | 重量：#{record.weight} | 回数：#{record.reps_count} | RM：#{record.RM}" %>
+  <br><%= record.note %>
+<% end %>

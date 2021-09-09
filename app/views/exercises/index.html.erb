@@ -8,11 +8,12 @@
 <%= link_to "記録一覧", records_path, method: :get %>
 <%# 種目名をクリックして記録一覧ページへ遷移　%>
 
-<% @exercises.map do |num| %>
-  <%# @exercises.name %>
+<% @exercises.map do |exercise| %>
+  <br>
+  <%= link_to exercise.name, records_path(exercise_id: exercise.id), method: :get %>
   <%# exercise_type = Record.where(name_id: num) %>
   <%# graph = exercise_type.pluck(:date, :RM) %>
-  <% graph = Record.where(name_id: num).pluck(:date, :RM) %>
+  <% graph = Record.where(name_id: exercise.id).pluck(:date, :RM) %>
   <%= line_chart graph, min: 30, max: 45 %>
   <%# line_chart graph, min: 0, max: 50 範囲指定 %>
 <% end %>
