@@ -4,7 +4,7 @@
 <h2> ログインユーザー： <%= current_user.name %> さん </h2> 
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
 <%= link_to "グラフを見る", exercises_path, method: :get %>
-<%= link_to "記録する", new_record_path, method: :get %>
+<%= link_to "記録する", new_record_path , method: :get %>
 
 <br>
 <%= @exercise.name %>

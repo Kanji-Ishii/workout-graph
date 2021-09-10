@@ -4,6 +4,7 @@
 <h2> ログインユーザー： <%= current_user.name %> さん </h2>
 <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
 <%= link_to "新しい種目を記録", new_exercise_path, method: :get %>
+<%= link_to "既存の種目を記録", new_record_path , method: :get %>
 <%# 種目名をクリックして記録一覧ページへ遷移　%>
 
 <% @exercises.map do |exercise| %>

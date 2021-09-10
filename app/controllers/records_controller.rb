@@ -1,11 +1,8 @@
 class RecordsController < ApplicationController
 
   def index
-    #@params = params[:exercise_id]
     @exercise = Exercise.find(params[:exercise_id])
     @records = Record.where(name_id: params[:exercise_id])
-    #logger.debug "@recordsの値はこれーーーー！#{@records}"
-    #logger.debug "@exerciseの値はこれーーーー！#{@exercise}"
   end
 
   def new
