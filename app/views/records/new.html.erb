@@ -16,12 +16,12 @@
 
   <div class="field">
     <%= f.label "重量" %><br />
-    <%= f.number_field :weight %>
+    <%= f.number_field :weight, min:0 %>
   </div>
 
   <div class="field">
     <%= f.label "回数" %><br />
-    <%= f.number_field :reps_count %>
+    <%= f.number_field :reps_count, min:0 %>
   </div>
 
   <div class="field">
