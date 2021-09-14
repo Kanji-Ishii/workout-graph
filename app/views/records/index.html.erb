@@ -9,6 +9,7 @@
 <br>
 <%= @exercise.name %>
 <% @records.map do |record| %> <br>
-  <%= "#{record.date} | 重量：#{record.weight} | 回数：#{record.reps_count} | RM：#{record.RM}" %>
+  <%= "#{record.date} | 重量：#{record.weight} | 回数：#{record.reps_count} | RM：#{record.RM} | "%>
+  <%= link_to "この記録を編集", edit_record_path(record.id) %>
   <br><%= record.note %>
 <% end %>

@@ -1,0 +1,36 @@
+<h2>記録を編集</h2>
+<h2> ログインユーザー： <%= current_user.name %> さん </h2>
+<%= link_to "グラフを見る", exercises_path, method: :get %>
+<%= link_to "新しい種目を記録", new_exercise_path, method: :get %>
+
+<%= form_with model: @record, local: true do |f| %>
+  <div class="field">
+    <%= f.label "種目名" %><br />
+    <%= f.collection_select(:name_id, Exercise.all, :id, :name, {prompt: "種目を選択してください"}) %>
+  </div>
+
+  <div class="field">
+    <%= f.label "日付" %><br />
+    <%= f.date_select :date, include_blank: true, selected: Date.today %>
+  </div>
+
+  <div class="field">
+    <%= f.label "重量" %><br />
+    <%= f.number_field :weight, min:0 %>
+  </div>
+
+  <div class="field">
+    <%= f.label "回数" %><br />
+    <%= f.number_field :reps_count, min:0 %>
+  </div>
+
+  <div class="field">
+    <%= f.label "備考" %><br />
+    <%= f.text_area :note %>
+  </div>
+
+  <div>
+    <%= f.submit "Save Record" %>
+  </div>
+
+<% end %>
