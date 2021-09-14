@@ -9,7 +9,8 @@
 
 <% @exercises.map do |exercise| %>
   <br>
-  <%= link_to exercise.name, records_path(exercise_id: exercise.id), method: :get %>
+  <%= link_to exercise.name, records_path(exercise_id: exercise.id)%>
+  <%= link_to "edit", edit_exercise_path(exercise.id)%>
   <%# exercise_type = Record.where(name_id: num) %>
   <%# graph = exercise_type.pluck(:date, :RM) %>
   <% graph = Record.where(name_id: exercise.id).pluck(:date, :RM) %>

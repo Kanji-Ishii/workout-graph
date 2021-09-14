@@ -10,9 +10,22 @@ class ExercisesController < ApplicationController
   def create
     @exercise = current_user.exercises.build(exercise_params)
     if @exercise.save
-      redirect_to  controller: :records, action: :new
+      redirect_to controller: :records, action: :new
     else
       render 'home/index'
+    end
+  end
+
+  def edit
+    @exercise = Exercise.find(params[:id])
+  end
+
+  def update
+    @exercise = Exercise.find(params[:id])
+    if @exercise.update(exercise_params)
+      redirect_to controller: :exercises, action: :index
+    else
+      render 'edit'
     end
   end
 

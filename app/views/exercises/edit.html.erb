@@ -1,0 +1,15 @@
+<h2>種目名の変更</h2>
+<h2> ログインユーザー： <%= current_user.name %> さん </h2>
+<%= link_to "グラフを見る", exercises_path, method: :get %>
+
+<%= form_with model: @exercise, local: true do |f| %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field( :name, size: 30 ) %>
+  </div>
+
+  <div>
+    <%= f.submit "決定" %>
+  </div>
+
+<% end %>
