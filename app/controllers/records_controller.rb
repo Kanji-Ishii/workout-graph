@@ -17,7 +17,7 @@ class RecordsController < ApplicationController
       redirect_to  controller: :exercises, action: :index
     else
       #render 'home/index'
-      redirect_to  controller: :home, action: :index
+      redirect_to  controller: :records, action: :new
       #else確認のため
     end
   end
@@ -35,9 +35,17 @@ class RecordsController < ApplicationController
     end
   end
 
-  private
-
-    def record_params
-      params.require(:record).permit(:name_id, :date, :weight, :reps_count, :note, :RM, :exercise_id)
+  def destroy
+    if Record.find(params[:id]).destroy
+      #flash[:success] = "削除しました"
+      redirect_to records_path(exercise_id: params[:exercise_id])
     end
+  end
+
+private
+
+  def record_params
+    params.require(:record).permit(:name_id, :date, :weight, :reps_count, :note, :RM, :exercise_id)
+  end
+
 end

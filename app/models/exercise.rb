@@ -1,5 +1,5 @@
 class Exercise < ApplicationRecord
-  belongs_to :user, optional: true
+  belongs_to :user, optional: true, dependent: :destroy
   has_many :records
   default_scope -> { order(created_at: :desc) }
   validates :name, presence: true
