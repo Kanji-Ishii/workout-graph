@@ -3,9 +3,10 @@
 <%= link_to "グラフを見る", exercises_path, method: :get %>
 
 <%= form_with model: @exercise, local: true do |f| %>
+  <%= render 'shared/error_messages' %>
   <div class="field">
     <%= f.label :name %><br />
-    <%= f.text_field( :name, size: 30 ) %>
+    <%= f.text_field( :name, size: 30 , class: 'form-control') %>
   </div>
 
   <div>
