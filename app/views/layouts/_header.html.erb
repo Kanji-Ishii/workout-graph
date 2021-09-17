@@ -1,0 +1,5 @@
+<p> ログインユーザー： <%= current_user.name %> さん <p>
+<%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+<%= link_to "グラフを見る", exercises_path, method: :get %>
+<%= link_to "新しい種目を記録", new_exercise_path, method: :get %>
+<%= link_to "既存の種目を記録", new_record_path , method: :get %>

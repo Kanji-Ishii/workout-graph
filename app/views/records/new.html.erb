@@ -1,7 +1,4 @@
-<h2>記録</h2>
-<h2> ログインユーザー： <%= current_user.name %> さん </h2>
-<%= link_to "グラフを見る", exercises_path, method: :get %>
-<%= link_to "新しい種目を記録", new_exercise_path, method: :get %>
+<%　provide(:title, "記録") %>
 
 <%= form_with model: @record, local: true do |f| %>
   <%= render 'shared/error_messages', model: f.object %>

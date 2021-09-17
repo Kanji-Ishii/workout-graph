@@ -1,6 +1,4 @@
-<h2>種目名の変更</h2>
-<h2> ログインユーザー： <%= current_user.name %> さん </h2>
-<%= link_to "グラフを見る", exercises_path, method: :get %>
+<% provide(:title, "種目名の変更") %>
 
 <%= form_with model: @exercise, local: true do |f| %>
   <%= render 'shared/error_messages' %>
