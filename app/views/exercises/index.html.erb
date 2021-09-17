@@ -3,7 +3,7 @@
 <% @exercises.map do |exercise| %>
   <br>
   <%= link_to exercise.name, records_path(exercise_id: exercise.id)%>
-  <%= link_to "edit", edit_exercise_path(exercise.id)%>
+  <%= link_to "種目名の変更", edit_exercise_path(exercise.id)%>
   <%= link_to "種目を削除", "/exercises/#{exercise.id}", method: :delete, data:{ confirm: "本当に削除しますか？"} %>
   <%# exercise_type = Record.where(name_id: num) %>
   <%# graph = exercise_type.pluck(:date, :RM) %>

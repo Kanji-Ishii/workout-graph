@@ -13,7 +13,7 @@ class ExercisesController < ApplicationController
     if @exercise.save
       redirect_to controller: :records, action: :new
     else
-      render 'home/index'
+      render 'new'
     end
   end
 

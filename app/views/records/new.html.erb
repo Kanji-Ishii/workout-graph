@@ -1,7 +1,7 @@
-<%　provide(:title, "記録") %>
+<% provide(:title, "記録") %>
 
 <%= form_with model: @record, local: true do |f| %>
-  <%= render 'shared/error_messages', model: f.object %>
+  <%= render 'shared/error_messages', object: f.object %>
   <div class="field">
     <%= f.label "種目名" %><br />
     <%= f.collection_select(:name_id, Exercise.all, :id, :name, {prompt: "種目を選択してください"}, class: 'form-control') %>

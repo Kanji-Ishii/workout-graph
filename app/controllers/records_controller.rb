@@ -17,7 +17,7 @@ class RecordsController < ApplicationController
       redirect_to  controller: :exercises, action: :index
     else
       #render 'home/index'
-      redirect_to  controller: :records, action: :new
+      render 'new'
       #else確認のため
     end
   end

@@ -28320,3 +28320,843 @@ Processing by ExercisesController#index as HTML
 Completed 200 OK in 16ms (Views: 13.7ms | ActiveRecord: 0.6ms | Allocations: 7678)
 
 
+Started GET "/exercises" for ::1 at 2021-09-17 12:46:59 +0900
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.3ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:10
+  Rendered exercises/index.html.erb within layouts/application (Duration: 12.2ms | Allocations: 7750)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 10.7ms | Allocations: 7404)
+Completed 200 OK in 85ms (Views: 69.1ms | ActiveRecord: 2.7ms | Allocations: 29918)
+
+
+Started GET "/records/new" for ::1 at 2021-09-17 12:47:02 +0900
+Processing by RecordsController#new as HTML
+  Parameters: {"authenticity_token"=>"FZcUkNu2z2nZML0TPfArWP2QTykZLK3kWMhbcWjb9KAGcO/y30v0/fpInFIgm4iKe07C2uchltQK1ZvaX+7eYg=="}
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/new.html.erb within layouts/application (Duration: 125.5ms | Allocations: 90313)
+Completed 500 Internal Server Error in 136ms (ActiveRecord: 0.4ms | Allocations: 97807)
+
+
+  
+ActionView::Template::Error (undefined method `　provide' for #<#<Class:0x00007fb8025c2850>:0x00007fb8025c0cf8>
+Did you mean?  provide):
+    1: <%　provide(:title, "記録") %>
+    2: 
+    3: <%= form_with model: @record, local: true do |f| %>
+    4:   <%= render 'shared/error_messages', model: f.object %>
+  
+app/views/records/new.html.erb:1
+Started GET "/records/new" for ::1 at 2021-09-17 12:48:00 +0900
+Processing by RecordsController#new as HTML
+  Parameters: {"authenticity_token"=>"FZcUkNu2z2nZML0TPfArWP2QTykZLK3kWMhbcWjb9KAGcO/y30v0/fpInFIgm4iKe07C2uchltQK1ZvaX+7eYg=="}
+  Rendering records/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 209)
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/records/new.html.erb:7
+  Rendered records/new.html.erb within layouts/application (Duration: 30.7ms | Allocations: 11239)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.4ms | Allocations: 1218)
+Completed 200 OK in 52ms (Views: 49.2ms | ActiveRecord: 0.4ms | Allocations: 18114)
+
+
+Started POST "/records" for ::1 at 2021-09-17 12:48:06 +0900
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"Ac5g+zxL+1zRc2ZHPRZeTnn/Sj4vFqAwv1dQ2BD2mBESKZuZOLbAyPILRwYgff2c/yHHzdEbmwDtSpBzJ8Oy0w==", "record"=>{"name_id"=>"0", "date(1i)"=>"2021", "date(2i)"=>"9", "date(3i)"=>"17", "weight"=>"0.0", "reps_count"=>"0", "note"=>""}, "commit"=>"Save Record"}
+  [1m[36mExercise Load (0.4ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:13:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:15:in `create'
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:15:in `create'
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:15:in `create'
+Redirected to http://localhost:3000/records/new
+Completed 302 Found in 19ms (ActiveRecord: 0.9ms | Allocations: 9516)
+
+
+Started GET "/records/new" for ::1 at 2021-09-17 12:48:06 +0900
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/records/new.html.erb:7
+  Rendered records/new.html.erb within layouts/application (Duration: 3.8ms | Allocations: 3051)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 1024)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.2ms | Allocations: 8526)
+
+
+Started GET "/exercises/new" for ::1 at 2021-09-17 12:48:14 +0900
+Processing by ExercisesController#new as HTML
+  Parameters: {"authenticity_token"=>"iK8PhT4FCekpaj6WFnmTuPOBgcTCeA5tfS3dQgQZz5GbSPTnOvgyfQoSH9cLEjBqdV8MNzx1NV0vMB3pMyzlUw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercises_controller.rb:8:in `new'
+  Rendering exercises/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 279.9ms | Allocations: 175689)
+  Rendered exercises/new.html.erb within layouts/application (Duration: 281.4ms | Allocations: 176198)
+Completed 500 Internal Server Error in 288ms (ActiveRecord: 0.2ms | Allocations: 179287)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `model' for #<#<Class:0x00007fb7f2825558>:0x00007fb8025db0f8>
+Did you mean?  module):
+    1: <% if model.errors.any? %>
+    2:   <div id="error_explanation">
+    3:     <div class="alert alert-danger">
+    4:       The form contains <%= pluralize(model.errors.count, "error") %>.
+  
+app/views/shared/_error_messages.html.erb:1
+app/views/exercises/new.html.erb:4
+app/views/exercises/new.html.erb:3
+Started POST "/records" for ::1 at 2021-09-17 12:49:48 +0900
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"iK8PhT4FCekpaj6WFnmTuPOBgcTCeA5tfS3dQgQZz5GbSPTnOvgyfQoSH9cLEjBqdV8MNzx1NV0vMB3pMyzlUw==", "record"=>{"name_id"=>"", "date(1i)"=>"2021", "date(2i)"=>"9", "date(3i)"=>"17", "weight"=>"0.0", "reps_count"=>"0", "note"=>""}, "commit"=>"Save Record"}
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:13:in `create'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1462)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Exercise with 'id'=):
+  
+app/controllers/records_controller.rb:13:in `create'
+Started POST "/records" for ::1 at 2021-09-17 12:49:52 +0900
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"iK8PhT4FCekpaj6WFnmTuPOBgcTCeA5tfS3dQgQZz5GbSPTnOvgyfQoSH9cLEjBqdV8MNzx1NV0vMB3pMyzlUw==", "record"=>{"name_id"=>"0", "date(1i)"=>"2021", "date(2i)"=>"9", "date(3i)"=>"17", "weight"=>"0.0", "reps_count"=>"0", "note"=>""}, "commit"=>"Save Record"}
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:13:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:15:in `create'
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:15:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:15:in `create'
+Redirected to http://localhost:3000/records/new
+Completed 302 Found in 11ms (ActiveRecord: 0.5ms | Allocations: 5954)
+
+
+Started GET "/records/new" for ::1 at 2021-09-17 12:49:52 +0900
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered records/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 1281)
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.0ms | Allocations: 2617)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% provide(:title, "記録") %>
+
+<%= form_with model: @record, local: true do |f| %>
+  <%= render 'shared/error_messages', @model: f.object %>
+  <div class="field">
+    <%= f.label "種目名" %><br />
+    <%= f.collection_select(:name_id, Exercise.all, :id, :name, {prompt: "種目を選択してください"}, class: 'form-control') %>
+  </div>
+
+  <div class="field">
+    <%= f.label "日付" %><br />
+    <%= f.date_select :date, include_blank: true, selected: Date.today , class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label "重量" %><br />
+    <%= f.number_field :weight, min:0 , class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label "回数" %><br />
+    <%= f.number_field :reps_count, min:0 , class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label "備考" %><br />
+    <%= f.text_area :note , class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= f.submit "Save Record" %>
+  </div>
+
+<% end %>
+
+):
+1:    <% provide(:title, "記録") %>
+2:    
+3:    <%= form_with model: @record, local: true do |f| %>
+4:      <%= render 'shared/error_messages', @model: f.object %>
+5:      <div class="field">
+6:        <%= f.label "種目名" %><br />
+7:        <%= f.collection_select(:name_id, Exercise.all, :id, :name, {prompt: "種目を選択してください"}, class: 'form-control') %>
+8:      </div>
+9:    
+10:      <div class="field">
+11:        <%= f.label "日付" %><br />
+12:        <%= f.date_select :date, include_blank: true, selected: Date.today , class: 'form-control' %>
+13:      </div>
+14:    
+15:      <div class="field">
+16:        <%= f.label "重量" %><br />
+17:        <%= f.number_field :weight, min:0 , class: 'form-control' %>
+18:      </div>
+19:    
+20:      <div class="field">
+21:        <%= f.label "回数" %><br />
+22:        <%= f.number_field :reps_count, min:0 , class: 'form-control' %>
+23:      </div>
+24:    
+25:      <div class="field">
+26:        <%= f.label "備考" %><br />
+27:        <%= f.text_area :note , class: 'form-control' %>
+28:      </div>
+29:    
+30:      <div>
+31:        <%= f.submit "Save Record" %>
+32:      </div>
+33:    
+34:    <% end %>
+  
+app/views/records/new.html.erb:4: syntax error, unexpected ':', expecting ')'
+app/views/records/new.html.erb:4: syntax error, unexpected ':', expecting ')'
+app/views/records/new.html.erb:4: syntax error, unexpected ':', expecting ')'
+app/views/records/new.html.erb:4: syntax error, unexpected ':', expecting ')'
+app/views/records/new.html.erb:4: syntax error, unexpected ':', expecting ')'
+app/views/records/new.html.erb:4: syntax error, unexpected ':', expecting ')'
+Started GET "/records/new" for ::1 at 2021-09-17 12:53:14 +0900
+Processing by RecordsController#new as HTML
+  Parameters: {"authenticity_token"=>"FZcUkNu2z2nZML0TPfArWP2QTykZLK3kWMhbcWjb9KAGcO/y30v0/fpInFIgm4iKe07C2uchltQK1ZvaX+7eYg=="}
+  Rendering records/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 199)
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/records/new.html.erb:7
+  Rendered records/new.html.erb within layouts/application (Duration: 7.7ms | Allocations: 3747)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.4ms | Allocations: 1198)
+Completed 200 OK in 21ms (Views: 19.1ms | ActiveRecord: 0.3ms | Allocations: 10614)
+
+
+Started POST "/records" for ::1 at 2021-09-17 12:53:19 +0900
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"V8npSEU0NyYIVcS5hOK1Lty8ZwU4r+ctlvPinPSvRVFELhIqQckMsist5fiZiRb8WmLq9sai3B3E7iI3w5pvkw==", "record"=>{"name_id"=>"0", "date(1i)"=>"2021", "date(2i)"=>"9", "date(3i)"=>"17", "weight"=>"0.0", "reps_count"=>"0", "note"=>""}, "commit"=>"Save Record"}
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:13:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:15:in `create'
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:15:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:15:in `create'
+Redirected to http://localhost:3000/records/new
+Completed 302 Found in 12ms (ActiveRecord: 0.5ms | Allocations: 5962)
+
+
+Started GET "/records/new" for ::1 at 2021-09-17 12:53:19 +0900
+Processing by RecordsController#new as HTML
+  Rendering records/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  [1m[36mExercise Load (0.3ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/records/new.html.erb:7
+  Rendered records/new.html.erb within layouts/application (Duration: 12.8ms | Allocations: 3051)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 1.5ms | Allocations: 1026)
+Completed 200 OK in 22ms (Views: 20.5ms | ActiveRecord: 0.4ms | Allocations: 8528)
+
+
+Started POST "/records" for ::1 at 2021-09-17 13:07:38 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"skyj3Mzs+kQSEM3VQKLbWzVdUFAUtp8egtpVqkcQ8Yihq1i+yBHB0DFo7JRdyXiJs4Pdo+q7pC7Qx5UBcCXbSg==", "record"=>{"name_id"=>"", "date(1i)"=>"2021", "date(2i)"=>"9", "date(3i)"=>"17", "weight"=>"0.0", "reps_count"=>"0", "note"=>""}, "commit"=>"Save Record"}
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:13:in `create'
+Completed 404 Not Found in 5ms (ActiveRecord: 0.1ms | Allocations: 3517)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Exercise with 'id'=):
+  
+app/controllers/records_controller.rb:13:in `create'
+Started POST "/records" for ::1 at 2021-09-17 13:08:24 +0900
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"skyj3Mzs+kQSEM3VQKLbWzVdUFAUtp8egtpVqkcQ8Yihq1i+yBHB0DFo7JRdyXiJs4Pdo+q7pC7Qx5UBcCXbSg==", "record"=>{"name_id"=>"", "date(1i)"=>"2021", "date(2i)"=>"9", "date(3i)"=>"17", "weight"=>"0.0", "reps_count"=>"0", "note"=>""}, "commit"=>"Save Record"}
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:13:in `create'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.2ms | Allocations: 1467)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Exercise with 'id'=):
+  
+app/controllers/records_controller.rb:13:in `create'
+Started POST "/records" for ::1 at 2021-09-17 13:11:10 +0900
+Processing by RecordsController#create as HTML
+  Parameters: {"authenticity_token"=>"skyj3Mzs+kQSEM3VQKLbWzVdUFAUtp8egtpVqkcQ8Yihq1i+yBHB0DFo7JRdyXiJs4Pdo+q7pC7Qx5UBcCXbSg==", "record"=>{"name_id"=>"0", "date(1i)"=>"2021", "date(2i)"=>"9", "date(3i)"=>"17", "weight"=>"0.0", "reps_count"=>"0", "note"=>""}, "commit"=>"Save Record"}
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:13:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:15:in `create'
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:15:in `create'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:15:in `create'
+  Rendering records/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 620)
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/records/new.html.erb:7
+  Rendered records/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 4178)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 7.8ms | Allocations: 6782)
+Completed 200 OK in 52ms (Views: 21.9ms | ActiveRecord: 0.8ms | Allocations: 36893)
+
+
+Started GET "/exercises/new" for ::1 at 2021-09-17 13:12:24 +0900
+Processing by ExercisesController#new as HTML
+  Parameters: {"authenticity_token"=>"Q7hGJYSWEV/h7avTlBsAk7ekQa0d2gZ0cCwDdIOiKVxQX71HgGsqy8KVipKJcKNBMXrMXuPXPUQiMcPftJcDng=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercises_controller.rb:8:in `new'
+  Rendering exercises/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 201)
+  Rendered exercises/new.html.erb within layouts/application (Duration: 2.6ms | Allocations: 1116)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 308)
+Completed 200 OK in 14ms (Views: 11.0ms | ActiveRecord: 0.1ms | Allocations: 8877)
+
+
+Started POST "/exercises" for ::1 at 2021-09-17 13:12:27 +0900
+Processing by ExercisesController#create as HTML
+  Parameters: {"authenticity_token"=>"o5BOr5nBfQFM+qETns4zZIScW2XdgQ7ZYBnBYszV4yewd7XNnTxGlW+CgFKDpZC2AkLWliOMNekyBAHJ++DJ5Q==", "exercise"=>{"name"=>""}, "commit"=>"決定"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercises_controller.rb:12:in `create'
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.8ms | Allocations: 345)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 136)
+Completed 200 OK in 14ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 7090)
+
+
+Started GET "/exercises/new" for ::1 at 2021-09-17 13:12:29 +0900
+Processing by ExercisesController#new as HTML
+  Parameters: {"authenticity_token"=>"7Q2fQjxgLvDqN8lWN3D7s9sG5u6DFi2iRoElbKT2KtX+6mQgOJ0VZMlP6BcqG1hhXdhrHX0bFpIUnOXHk8MAFw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercises_controller.rb:8:in `new'
+  Rendering exercises/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered exercises/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 483)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 135)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 0.2ms | Allocations: 6166)
+
+
+Started POST "/exercises" for ::1 at 2021-09-17 13:12:31 +0900
+Processing by ExercisesController#create as HTML
+  Parameters: {"authenticity_token"=>"FiI9unSyeOKc7KTDFpAWIvlO35ba03Hx2Mw7qiI7hVMFxcbYcE9Ddr+UhYIL+7Xwf5BSZSTeSsGK0fsBFQ6vkQ==", "exercise"=>{"name"=>""}, "commit"=>"決定"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercises_controller.rb:12:in `create'
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.2ms | Allocations: 87)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 134)
+Completed 200 OK in 12ms (Views: 7.5ms | ActiveRecord: 0.2ms | Allocations: 6561)
+
+
+Started GET "/exercises/new" for ::1 at 2021-09-17 13:12:33 +0900
+Processing by ExercisesController#new as HTML
+  Parameters: {"authenticity_token"=>"K0Vu7B9FokJYSbFTPDOsP0CLNi0/qflzx1/RN/48dtU4opWOG7iZ1nsxkBIhWA/txlW73sGkwkOVQhGcyQlcFw=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercises_controller.rb:8:in `new'
+  Rendering exercises/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered exercises/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 481)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 135)
+Completed 200 OK in 13ms (Views: 9.1ms | ActiveRecord: 0.1ms | Allocations: 6163)
+
+
+Started POST "/exercises" for ::1 at 2021-09-17 13:13:35 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by ExercisesController#create as HTML
+  Parameters: {"authenticity_token"=>"3GxnLo5NeZmT6++ND9tjJtMsKBJGrdzGEYGRVzOnyGrPi5xMirBCDbCTzswSsMD0VfKl4big5/ZDnFH8BJLiqA==", "exercise"=>{"name"=>""}, "commit"=>"決定"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercises_controller.rb:12:in `create'
+  Rendering exercises/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.2ms | Allocations: 145)
+  Rendered exercises/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 632)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 144)
+Completed 200 OK in 35ms (Views: 7.2ms | ActiveRecord: 1.1ms | Allocations: 19988)
+
+
+Started GET "/records/new" for ::1 at 2021-09-17 13:13:47 +0900
+Processing by RecordsController#new as HTML
+  Parameters: {"authenticity_token"=>"G0gEhOUqG65PRt+++KxCP0uNdvrbg/Bb/uv+t093HvEIr//m4dcgOmw+/v/lx+HtzVP7CSWOy2us9j4ceEI0Mw=="}
+  Rendering records/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/records/new.html.erb:7
+  Rendered records/new.html.erb within layouts/application (Duration: 5.3ms | Allocations: 3504)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 1030)
+Completed 200 OK in 25ms (Views: 13.6ms | ActiveRecord: 0.8ms | Allocations: 16750)
+
+
+Started GET "/exercises" for ::1 at 2021-09-17 13:13:48 +0900
+Processing by ExercisesController#index as HTML
+  Parameters: {"authenticity_token"=>"Tgp/KLJSI4nohSUIIE8bZw9qO2n7r6RUL8N0SjHiBAJd7YRKtq8YHcv9BEk9JLi1ibS2mgWin2R93rThBtcuwA=="}
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:10
+  Rendered exercises/index.html.erb within layouts/application (Duration: 5.4ms | Allocations: 2100)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1030)
+Completed 200 OK in 16ms (Views: 12.9ms | ActiveRecord: 0.7ms | Allocations: 7691)
+
+
+Started GET "/records?exercise_id=0" for ::1 at 2021-09-17 13:13:50 +0900
+Processing by RecordsController#index as HTML
+  Parameters: {"exercise_id"=>"0"}
+  [1m[36mExercise Load (0.3ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:4:in `index'
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (1.0ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/records/index.html.erb:5:in `map'
+  Rendered records/index.html.erb within layouts/application (Duration: 8.4ms | Allocations: 2785)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.5ms | Allocations: 1030)
+Completed 200 OK in 24ms (Views: 18.9ms | ActiveRecord: 1.4ms | Allocations: 9213)
+
+
+Started GET "/records/14/edit" for ::1 at 2021-09-17 13:13:55 +0900
+Processing by RecordsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? ORDER BY "records"."created_at" DESC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:26:in `edit'
+  Rendering records/edit.html.erb within layouts/application
+  Rendered records/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1283)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms | Allocations: 2656)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%　provide(:title, "記録を編集") %>
+
+<%= form_with model: @record, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label "種目名" %><br />
+    <%= f.collection_select(:name_id, Exercise.all, :id, :name, {prompt: "種目を選択してください"}) , class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label "日付" %><br />
+    <%= f.date_select :date, include_blank: true, selected: Date.today , class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label "重量" %><br />
+    <%= f.number_field :weight, min:0 , class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label "回数" %><br />
+    <%= f.number_field :reps_count, min:0 , class: 'form-control' %>
+  </div>
+
+  <div class="field">
+    <%= f.label "備考" %><br />
+    <%= f.text_area :note , class: 'form-control' %>
+  </div>
+
+  <div>
+    <%= f.submit "Save Record" %>
+  </div>
+
+<% end %>
+
+):
+1:    <%　provide(:title, "記録を編集") %>
+2:    
+3:    <%= form_with model: @record, local: true do |f| %>
+4:      <%= render 'shared/error_messages', object: f.object %>
+5:      <div class="field">
+6:        <%= f.label "種目名" %><br />
+7:        <%= f.collection_select(:name_id, Exercise.all, :id, :name, {prompt: "種目を選択してください"}) , class: 'form-control' %>
+8:      </div>
+9:    
+10:      <div class="field">
+11:        <%= f.label "日付" %><br />
+12:        <%= f.date_select :date, include_blank: true, selected: Date.today , class: 'form-control' %>
+13:      </div>
+14:    
+15:      <div class="field">
+16:        <%= f.label "重量" %><br />
+17:        <%= f.number_field :weight, min:0 , class: 'form-control' %>
+18:      </div>
+19:    
+20:      <div class="field">
+21:        <%= f.label "回数" %><br />
+22:        <%= f.number_field :reps_count, min:0 , class: 'form-control' %>
+23:      </div>
+24:    
+25:      <div class="field">
+26:        <%= f.label "備考" %><br />
+27:        <%= f.text_area :note , class: 'form-control' %>
+28:      </div>
+29:    
+30:      <div>
+31:        <%= f.submit "Save Record" %>
+32:      </div>
+33:    
+34:    <% end %>
+  
+app/views/records/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/records/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/records/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/records/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/records/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/records/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+Started GET "/records?exercise_id=0" for ::1 at 2021-09-17 13:14:56 +0900
+Processing by RecordsController#index as HTML
+  Parameters: {"exercise_id"=>"0"}
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:4:in `index'
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/records/index.html.erb:5:in `map'
+  Rendered records/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 2735)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1198)
+Completed 200 OK in 19ms (Views: 15.9ms | ActiveRecord: 0.4ms | Allocations: 10391)
+
+
+Started GET "/records/14/edit" for ::1 at 2021-09-17 13:14:57 +0900
+Processing by RecordsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? ORDER BY "records"."created_at" DESC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:26:in `edit'
+  Rendering records/edit.html.erb within layouts/application
+  Rendered records/edit.html.erb within layouts/application (Duration: 130.8ms | Allocations: 90060)
+Completed 500 Internal Server Error in 134ms (ActiveRecord: 0.2ms | Allocations: 91407)
+
+
+  
+ActionView::Template::Error (undefined method `　provide' for #<#<Class:0x00007fb814a75bd8>:0x00007fb811c0e268>
+Did you mean?  provide):
+    1: <%　provide(:title, "記録を編集") %>
+    2: 
+    3: <%= form_with model: @record, local: true do |f| %>
+    4:   <%= render 'shared/error_messages', object: f.object %>
+  
+app/views/records/edit.html.erb:1
+Started GET "/records?exercise_id=0" for ::1 at 2021-09-17 13:15:23 +0900
+Processing by RecordsController#index as HTML
+  Parameters: {"exercise_id"=>"0"}
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:4:in `index'
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/records/index.html.erb:5:in `map'
+  Rendered records/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 2740)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.5ms | Allocations: 1198)
+Completed 200 OK in 21ms (Views: 16.9ms | ActiveRecord: 0.4ms | Allocations: 10772)
+
+
+Started GET "/records/14/edit" for ::1 at 2021-09-17 13:15:25 +0900
+Processing by RecordsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mRecord Load (0.3ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? ORDER BY "records"."created_at" DESC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:26:in `edit'
+  Rendering records/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.7ms | Allocations: 201)
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/records/edit.html.erb:7
+  Rendered records/edit.html.erb within layouts/application (Duration: 10.7ms | Allocations: 3762)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.7ms | Allocations: 1032)
+Completed 200 OK in 27ms (Views: 22.1ms | ActiveRecord: 0.7ms | Allocations: 10093)
+
+
+Started GET "/records/14/edit" for ::1 at 2021-09-17 13:15:41 +0900
+Processing by RecordsController#edit as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mRecord Load (0.1ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? ORDER BY "records"."created_at" DESC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:26:in `edit'
+  Rendering records/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.4ms | Allocations: 201)
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/records/edit.html.erb:7
+  Rendered records/edit.html.erb within layouts/application (Duration: 15.1ms | Allocations: 3760)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.6ms | Allocations: 1199)
+Completed 200 OK in 29ms (Views: 25.9ms | ActiveRecord: 0.4ms | Allocations: 11319)
+
+
+Started PATCH "/records/14" for ::1 at 2021-09-17 13:15:54 +0900
+Processing by RecordsController#update as HTML
+  Parameters: {"authenticity_token"=>"Qz/IalvVQCmqCb9nbWnGiHMt0TenK3L5CYNjTanymOhQ2DMIXyh7vYlxniZwAmVa9fNcxFkmSclbnqPmnseyKg==", "record"=>{"name_id"=>"0", "date(1i)"=>"2021", "date(2i)"=>"9", "date(3i)"=>"17", "weight"=>"0", "reps_count"=>"0", "note"=>"Lorem ipsum dolor sit amet consectetur adipisci elit"}, "commit"=>"Save Record", "id"=>"14"}
+  [1m[36mRecord Load (0.2ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."id" = ? ORDER BY "records"."created_at" DESC LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:30:in `update'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/records_controller.rb:31:in `update'
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:31:in `update'
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/records_controller.rb:31:in `update'
+  Rendering records/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 425)
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/records/edit.html.erb:7
+  Rendered records/edit.html.erb within layouts/application (Duration: 5.0ms | Allocations: 3532)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 1022)
+Completed 200 OK in 24ms (Views: 12.8ms | ActiveRecord: 0.8ms | Allocations: 15062)
+
+
+Started GET "/exercises" for ::1 at 2021-09-17 13:16:10 +0900
+Processing by ExercisesController#index as HTML
+  Parameters: {"authenticity_token"=>"5scdOVAVqH0mGojE4Uk1t8iRu3yQllsctJf0czFmp6n1IOZbVOiT6QViqYX8IpZlTk82j26bYCzmijTYBlONaw=="}
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:10
+  Rendered exercises/index.html.erb within layouts/application (Duration: 4.8ms | Allocations: 2088)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1030)
+Completed 200 OK in 18ms (Views: 15.3ms | ActiveRecord: 0.6ms | Allocations: 8217)
+
+
+Started GET "/exercises/0/edit" for ::1 at 2021-09-17 13:16:12 +0900
+Processing by ExercisesController#edit as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/exercises_controller.rb:21:in `edit'
+  Rendering exercises/edit.html.erb within layouts/application
+  Rendered exercises/edit.html.erb within layouts/application (Duration: 2.0ms | Allocations: 1127)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 2464)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% provide(:title, "種目名の変更") %>
+
+<%= form_with model: @exercise, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field( :name, size: 30 ) , class: 'form-control'%>
+  </div>
+
+  <div>
+    <%= f.submit "決定" %>
+  </div>
+
+<% end %>
+
+):
+1:    <% provide(:title, "種目名の変更") %>
+2:    
+3:    <%= form_with model: @exercise, local: true do |f| %>
+4:      <%= render 'shared/error_messages', object: f.object %>
+5:      <div class="field">
+6:        <%= f.label :name %><br />
+7:        <%= f.text_field( :name, size: 30 ) , class: 'form-control'%>
+8:      </div>
+9:    
+10:      <div>
+11:        <%= f.submit "決定" %>
+12:      </div>
+13:    
+14:    <% end %>
+  
+app/views/exercises/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/exercises/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/exercises/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/exercises/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/exercises/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/exercises/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+Started GET "/exercises" for ::1 at 2021-09-17 13:20:28 +0900
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:10
+  Rendered exercises/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 2184)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.0ms | Allocations: 1027)
+Completed 200 OK in 25ms (Views: 23.7ms | ActiveRecord: 0.6ms | Allocations: 7669)
+
+
+Started GET "/exercises/0/edit" for ::1 at 2021-09-17 13:20:30 +0900
+Processing by ExercisesController#edit as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/exercises_controller.rb:21:in `edit'
+  Rendering exercises/edit.html.erb within layouts/application
+  Rendered exercises/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 1118)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.2ms | Allocations: 2320)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% provide(:title, "種目名の変更") %>
+
+<%= form_with model: @exercise, local: true do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field( :name, size: 30 ) , class: 'form-control'%>
+  </div>
+
+  <div>
+    <%= f.submit "決定" %>
+  </div>
+
+<% end %>
+
+):
+1:    <% provide(:title, "種目名の変更") %>
+2:    
+3:    <%= form_with model: @exercise, local: true do |f| %>
+4:      <%= render 'shared/error_messages', object: f.object %>
+5:      <div class="field">
+6:        <%= f.label :name %><br />
+7:        <%= f.text_field( :name, size: 30 ) , class: 'form-control'%>
+8:      </div>
+9:    
+10:      <div>
+11:        <%= f.submit "決定" %>
+12:      </div>
+13:    
+14:    <% end %>
+  
+app/views/exercises/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/exercises/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/exercises/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/exercises/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/exercises/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+app/views/exercises/edit.html.erb:7: syntax error, unexpected ',', expecting ')'
+Started GET "/exercises" for ::1 at 2021-09-17 13:21:24 +0900
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:10
+  Rendered exercises/index.html.erb within layouts/application (Duration: 5.0ms | Allocations: 2433)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 3.1ms | Allocations: 1198)
+Completed 200 OK in 20ms (Views: 17.8ms | ActiveRecord: 0.5ms | Allocations: 9306)
+
+
+Started GET "/exercises/0/edit" for ::1 at 2021-09-17 13:21:25 +0900
+Processing by ExercisesController#edit as HTML
+  Parameters: {"id"=>"0"}
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/exercises_controller.rb:21:in `edit'
+  Rendering exercises/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 1.0ms | Allocations: 201)
+  Rendered exercises/edit.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1067)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.4ms | Allocations: 1032)
+Completed 200 OK in 20ms (Views: 16.3ms | ActiveRecord: 0.4ms | Allocations: 7395)
+
+
+Started PATCH "/exercises/0" for ::1 at 2021-09-17 13:21:30 +0900
+Processing by ExercisesController#update as HTML
+  Parameters: {"authenticity_token"=>"zTT0PEm5LrTuuKrnIRdiSWkwTeKkRySAvOdAKRlRlO2NpQponRJBriiaMIzWoKl8XBe965+q4bjycgoHVwl4RA==", "exercise"=>{"name"=>""}, "commit"=>"決定", "id"=>"0"}
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  ↳ app/controllers/exercises_controller.rb:25:in `update'
+  Rendering exercises/edit.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.3ms | Allocations: 145)
+  Rendered exercises/edit.html.erb within layouts/application (Duration: 1.9ms | Allocations: 689)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 1024)
+Completed 200 OK in 15ms (Views: 10.3ms | ActiveRecord: 0.3ms | Allocations: 7977)
+
+
+Started GET "/records/new" for ::1 at 2021-09-17 13:21:47 +0900
+Processing by RecordsController#new as HTML
+  Parameters: {"authenticity_token"=>"7rqveB6cUu0zYrnlj/QUg0xoynb1lHt8d5bwf4L7QTP9XVQaGmFpeRAamKSSn7dRyrZHhQuZQEwlizDUtc5r8Q=="}
+  Rendering records/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.0ms | Allocations: 15)
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/records/new.html.erb:7
+  Rendered records/new.html.erb within layouts/application (Duration: 6.2ms | Allocations: 3413)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 1.9ms | Allocations: 1030)
+Completed 200 OK in 17ms (Views: 15.3ms | ActiveRecord: 0.3ms | Allocations: 9558)
+
+
+Started GET "/exercises/new" for ::1 at 2021-09-17 13:21:50 +0900
+Processing by ExercisesController#new as HTML
+  Parameters: {"authenticity_token"=>"Spl4bnfHVERGuS5yfPazpZbRGpUAdv1qXXvsLXJXbuJZfoMMczpv0GXBDzNhnRB3EA+XZv57xloPZiyGRWJEIA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercises_controller.rb:8:in `new'
+  Rendering exercises/new.html.erb within layouts/application
+  Rendered shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered exercises/new.html.erb within layouts/application (Duration: 2.0ms | Allocations: 702)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 140)
+Completed 200 OK in 11ms (Views: 8.6ms | ActiveRecord: 0.1ms | Allocations: 6518)
+
+
+Started GET "/exercises" for ::1 at 2021-09-17 13:21:52 +0900
+Processing by ExercisesController#index as HTML
+  Parameters: {"authenticity_token"=>"w2jrcXzERbmUW+6ioCN/QdSe2T3vn3kT+32yw8Xo0/rQjxATeDl+Lbcjz+O9SNyTUkBUzhGSQiOpYHJo8t35OA=="}
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:10
+  Rendered exercises/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1836)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 1.6ms | Allocations: 1025)
+Completed 200 OK in 15ms (Views: 12.9ms | ActiveRecord: 0.6ms | Allocations: 7300)
+
+
