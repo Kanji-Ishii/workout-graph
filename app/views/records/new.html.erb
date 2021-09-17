@@ -4,10 +4,10 @@
 <%= link_to "新しい種目を記録", new_exercise_path, method: :get %>
 
 <%= form_with model: @record, local: true do |f| %>
-  <%= render 'shared/error_messages' %>
+  <%= render 'shared/error_messages', model: f.object %>
   <div class="field">
     <%= f.label "種目名" %><br />
-    <%= f.collection_select(:name_id, Exercise.all, :id, :name, {prompt: "種目を選択してください"}) , class: 'form-control' %>
+    <%= f.collection_select(:name_id, Exercise.all, :id, :name, {prompt: "種目を選択してください"}, class: 'form-control') %>
   </div>
 
   <div class="field">
