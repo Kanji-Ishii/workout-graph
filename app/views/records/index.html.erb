@@ -1,10 +1,13 @@
 <% provide(:title, "記録一覧") %>
 
-<br>
-<%= @exercise.name %>
-<% @records.map do |record| %> <br>
-  <%= "#{record.date} | 重量：#{record.weight} | 回数：#{record.reps_count} | RM：#{record.RM} | "%>
-  <%= link_to "編集", edit_record_path(record.id) %>
-  <%= link_to "削除", record_path(record.id, exercise_id: record.exercise_id) , method: :delete, data:{ confirm: "本当に削除しますか？"} %>
-  <br><%= record.note %>
-<% end %>
+<div class="rec_container">
+  <h2><%= "#{@exercise.name} の記録" %></h2>
+  <% @records.map do |record| %> 
+    <div class=record>
+      <%= "#{record.date} | 重量：#{record.weight} | 回数：#{record.reps_count} | RM：#{record.RM} | "%>
+      <%= link_to("編集", edit_record_path(record.id), class: "link") %>
+      <%= link_to("削除", record_path(record.id, exercise_id: record.exercise_id) , method: :delete, data:{ confirm: "本当に削除しますか？"}, class: "link") %>
+      <br><%= "備考：#{record.note}" %>
+    </div>
+  <% end %>
+</div>

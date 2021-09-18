@@ -11,6 +11,7 @@ $state-danger-text: #777;
 .contents {
   width: 85%;
   margin: auto;
+  margin-bottom: 60px;
 }
 
 .link {
@@ -39,7 +40,7 @@ header {
   }
 }
 
-/* exercise#index */
+/* exercises#index */
 .graph-container {
   margin: 45px 0;
   .ex_name {
@@ -49,6 +50,17 @@ header {
   .ex_option {
     margin: 0 7px;
   }
+}
+
+/* records#index */
+.rec_container h2 {
+  margin: 0;
+  padding: 30px 0;
+  border-bottom: 2px solid slategray;
+}
+.record {
+  padding: 15px 0;
+  border-bottom: 2px solid slategray;
 }
 
 /* forms */
