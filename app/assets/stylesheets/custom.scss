@@ -1,0 +1,57 @@
+/* mixins, variables, etc. */
+$state-danger-text: #777;
+
+@mixin box_sizing {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.container {
+  margin: 0 15px;
+}
+
+/* header */
+header {
+  background-color: rgb(173, 219, 238);
+  .navbar {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 30px;
+    .navbar_li {
+      margin: 0 3px;
+    }
+  }
+}
+
+/* forms */
+
+input,
+textarea,
+select,
+.uneditable-input {
+  border: 1px solid #bbb;
+  width: 100%;
+  margin-bottom: 15px;
+  @include box_sizing;
+}
+/*
+input {
+  height: auto !important;
+}
+
+#error_explanation {
+  color: red;
+  ul {
+    color: red;
+    margin: 0 0 30px 0;
+  }
+}
+
+.field_with_errors {
+  @extend .has-error;
+  .form-control {
+    color: $state-danger-text;
+  }
+}
+*/
