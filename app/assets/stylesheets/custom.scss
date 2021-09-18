@@ -70,7 +70,9 @@ textarea,
 select,
 .uneditable-input {
   border: 1px solid #bbb;
-  width: 100%;
+  width: 60%;
+  font-size: 30px;
+  text-align: center;
   margin-bottom: 15px;
   @include box_sizing;
 }
