@@ -1,13 +1,13 @@
 <% if user_signed_in? %> 
   <header>
-  <div class="container">
+  <div class="header_container">
     <h2>WorkoutGraph | <%= yield(:title) %></h2>
     <p> ログインユーザー： <%= current_user.name %> さん <p>
     <div class="navbar">
-      <%= link_to("ログアウト", destroy_user_session_path, {class: "navbar_li"}) %>
-      <%= link_to("グラフを見る", exercises_path, {class: "navbar_li"}) %>
-      <%= link_to("新しい種目を記録", new_exercise_path, {class: "navbar_li"}) %>
-      <%= link_to("既存の種目を記録", new_record_path,{class: "navbar_li"}) %>
+      <%= link_to("ログアウト", destroy_user_session_path, {class: "link navbar_li"}) %>
+      <%= link_to("グラフを見る", exercises_path, {class: "link navbar_li"}) %>
+      <%= link_to("新しい種目を記録", new_exercise_path, {class: "link navbar_li"}) %>
+      <%= link_to("既存の種目を記録", new_record_path,{class: "link navbar_li"}) %>
     </div>
   </div>
 </header>

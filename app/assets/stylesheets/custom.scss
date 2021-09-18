@@ -7,21 +7,47 @@ $state-danger-text: #777;
   box-sizing: border-box;
 }
 
-.container {
-  margin: 0 15px;
+/* common items */
+.contents {
+  width: 85%;
+  margin: auto;
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  color: #ff7043;
 }
 
 /* header */
 header {
   background-color: rgb(173, 219, 238);
   padding-top: 15px;
-  .navbar {
-    display: flex;
-    justify-content: flex-end;
-    padding-bottom: 30px;
-    .navbar_li {
-      margin: 0 5px;
+  width: 100%;
+  .header_container {
+    padding: 0 25px;
+    .navbar {
+      display: flex;
+      justify-content: flex-end;
+      padding-bottom: 30px;
+      .navbar_li {
+        margin: 0 5px;
+      }
     }
+  }
+}
+
+/* exercise#index */
+.graph-container {
+  margin: 45px 0;
+  .ex_name {
+    font-size: 25px;
+    font-weight: bold;
+  }
+  .ex_option {
+    margin: 0 7px;
   }
 }
 

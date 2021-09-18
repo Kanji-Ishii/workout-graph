@@ -1,13 +1,12 @@
 <% provide(:title, "グラフページ") %>
 
 <% @exercises.map do |exercise| %>
-  <br>
-  <%= link_to exercise.name, records_path(exercise_id: exercise.id)%>
-  <%= link_to "種目名の変更", edit_exercise_path(exercise.id)%>
-  <%= link_to "種目を削除", "/exercises/#{exercise.id}", method: :delete, data:{ confirm: "本当に削除しますか？"} %>
-  <%# exercise_type = Record.where(name_id: num) %>
-  <%# graph = exercise_type.pluck(:date, :RM) %>
-  <% graph = Record.where(name_id: exercise.id).pluck(:date, :RM) %>
-  <%= line_chart graph, min: 30, max: 45 %>
-  <%# line_chart graph, min: 0, max: 50 範囲指定 %>
+  <div class="graph-container">
+    <br>
+    <%= link_to(exercise.name, records_path(exercise_id: exercise.id), class: "link ex_name")%>
+    <%= link_to("名前の変更", edit_exercise_path(exercise.id), class: "link ex_option")%>
+    <%= link_to("種目を削除", "/exercises/#{exercise.id}", method: :delete, data:{ confirm: "本当に削除しますか？"}, class: "link ex_option") %>
+    <% graph = Record.where(name_id: exercise.id).pluck(:date, :RM) %>
+    <%= line_chart graph, min: 30, max: 45 %>
+  </div>
 <% end %>
