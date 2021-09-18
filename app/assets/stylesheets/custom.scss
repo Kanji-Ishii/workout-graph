@@ -14,12 +14,13 @@ $state-danger-text: #777;
 /* header */
 header {
   background-color: rgb(173, 219, 238);
+  padding-top: 15px;
   .navbar {
     display: flex;
     justify-content: flex-end;
     padding-bottom: 30px;
     .navbar_li {
-      margin: 0 3px;
+      margin: 0 5px;
     }
   }
 }

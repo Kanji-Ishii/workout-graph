@@ -1,10 +1,7 @@
 <% provide(:title, "トップページ") %>
 
-<% if user_signed_in? %> 
-  <h2> 現在 <%= current_user.name %> さんがログインしています </h2> 
-  <h4> メールアドレス： <%= current_user.email %> </h4>
+<% if user_signed_in? %>
   <%= link_to "ログアウト", destroy_user_session_path, method: :delete %> 
-  <%= link_to "グラフを見る", exercises_path, method: :get %>
 <% else %>
   <h2> 現在ログインしていません </h2>
   <%= link_to "ログイン", new_user_session_path, class: 'post' %>
