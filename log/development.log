@@ -37849,3 +37849,932 @@ FOREIGN KEY ("exercise_id")
   [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
   [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/exercises" for ::1 at 2021-09-19 17:35:42 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  Rendered exercises/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1240)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 12.8ms | Allocations: 2405)
+Completed 200 OK in 69ms (Views: 49.2ms | ActiveRecord: 1.8ms | Allocations: 19514)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-09-19 17:35:44 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.8ms | Allocations: 642)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 55.6ms | Allocations: 54719)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 128)
+Completed 200 OK in 83ms (Views: 65.1ms | ActiveRecord: 0.0ms | Allocations: 66573)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-09-19 17:35:51 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"lrZAM4b3UbswcrPie8iqKD9TkPr08xMQaIB7f8XaWU41kNEr2YNRwXtapOzqYR+3A6EvNwIAeX1629qfNjLtlA==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sample@sample.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (ActiveRecord: 0.3ms | Allocations: 2020)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"lrZAM4b3UbswcrPie8iqKD9TkPr08xMQaIB7f8XaWU41kNEr2YNRwXtapOzqYR+3A6EvNwIAeX1629qfNjLtlA==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 134)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1004)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 87)
+Completed 200 OK in 267ms (Views: 7.3ms | ActiveRecord: 0.0ms | Allocations: 6049)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-09-19 17:35:59 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"V1mM8RdzQMDQTvidJpHru7OnDZFbEv6J9w4nk0btCR3SZsMvwoBCTFnZph9dWx9alEOt3PhmCGu0xGdc4GRB2Q==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sample@sample.com"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.2ms | Allocations: 1823)
+
+
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"V1mM8RdzQMDQTvidJpHru7OnDZFbEv6J9w4nk0btCR3SZsMvwoBCTFnZph9dWx9alEOt3PhmCGu0xGdc4GRB2Q==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.1ms | Allocations: 134)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 997)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 87)
+Completed 200 OK in 268ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 5459)
+
+
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "sample@sample.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at", "name") VALUES (?, ?, ?, ?, ?)[0m  [["email", "sample@sample.com"], ["encrypted_password", "$2a$12$ybNkTlJpliWbKeLoIl6PkuQJbzC3R07zGCUcgonGpk3U1YcBfmaxy"], ["created_at", "2021-09-19 08:36:13.011096"], ["updated_at", "2021-09-19 08:36:13.011096"], ["name", "sample"]]
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Create (0.4ms)[0m  [1m[32mINSERT INTO "exercises" ("id", "user_id", "name", "records_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["id", 0], ["user_id", 1], ["name", "dumbel press"], ["records_count", 15], ["created_at", "2021-09-19 08:36:13.024189"], ["updated_at", "2021-09-19 08:36:13.024189"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Create (0.3ms)[0m  [1m[32mINSERT INTO "exercises" ("id", "user_id", "name", "records_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["id", 1], ["user_id", 1], ["name", "dumbel fly"], ["records_count", 15], ["created_at", "2021-09-19 08:36:13.029313"], ["updated_at", "2021-09-19 08:36:13.029313"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Create (0.3ms)[0m  [1m[32mINSERT INTO "exercises" ("id", "user_id", "name", "records_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["id", 2], ["user_id", 1], ["name", "arm curl"], ["records_count", 15], ["created_at", "2021-09-19 08:36:13.033969"], ["updated_at", "2021-09-19 08:36:13.033969"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Create (0.3ms)[0m  [1m[32mINSERT INTO "exercises" ("id", "user_id", "name", "records_count", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["id", 3], ["user_id", 1], ["name", "triceps extension"], ["records_count", 15], ["created_at", "2021-09-19 08:36:13.038393"], ["updated_at", "2021-09-19 08:36:13.038393"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.5ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 0], ["name_id", 0], ["weight", 22.0], ["reps_count", 10], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 28.6], ["date", "2021-09-05"], ["created_at", "2021-09-19 08:36:13.084263"], ["updated_at", "2021-09-19 08:36:13.084263"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 0], ["name_id", 0], ["weight", 24.0], ["reps_count", 8], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 29.41], ["date", "2021-09-06"], ["created_at", "2021-09-19 08:36:13.090144"], ["updated_at", "2021-09-19 08:36:13.090144"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 0], ["name_id", 0], ["weight", 22.0], ["reps_count", 12], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 30.35], ["date", "2021-09-07"], ["created_at", "2021-09-19 08:36:13.095842"], ["updated_at", "2021-09-19 08:36:13.095842"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.4ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 0], ["name_id", 0], ["weight", 26.0], ["reps_count", 8], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 31.86], ["date", "2021-09-08"], ["created_at", "2021-09-19 08:36:13.101841"], ["updated_at", "2021-09-19 08:36:13.101841"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 0], ["name_id", 0], ["weight", 24.0], ["reps_count", 14], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 35.15], ["date", "2021-09-09"], ["created_at", "2021-09-19 08:36:13.106785"], ["updated_at", "2021-09-19 08:36:13.106785"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 0], ["name_id", 0], ["weight", 22.0], ["reps_count", 18], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 36.3], ["date", "2021-09-10"], ["created_at", "2021-09-19 08:36:13.112085"], ["updated_at", "2021-09-19 08:36:13.112085"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.4ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 0], ["name_id", 0], ["weight", 24.0], ["reps_count", 14], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 35.15], ["date", "2021-09-11"], ["created_at", "2021-09-19 08:36:13.117374"], ["updated_at", "2021-09-19 08:36:13.117374"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 0], ["name_id", 0], ["weight", 26.0], ["reps_count", 10], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 33.8], ["date", "2021-09-12"], ["created_at", "2021-09-19 08:36:13.122909"], ["updated_at", "2021-09-19 08:36:13.122909"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 0], ["name_id", 0], ["weight", 24.0], ["reps_count", 16], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 37.31], ["date", "2021-09-13"], ["created_at", "2021-09-19 08:36:13.144138"], ["updated_at", "2021-09-19 08:36:13.144138"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 0], ["name_id", 0], ["weight", 22.0], ["reps_count", 22], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 40.82], ["date", "2021-09-14"], ["created_at", "2021-09-19 08:36:13.149530"], ["updated_at", "2021-09-19 08:36:13.149530"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 0], ["name_id", 0], ["weight", 26.0], ["reps_count", 12], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 35.87], ["date", "2021-09-15"], ["created_at", "2021-09-19 08:36:13.154234"], ["updated_at", "2021-09-19 08:36:13.154234"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 0], ["name_id", 0], ["weight", 28.0], ["reps_count", 10], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 36.4], ["date", "2021-09-16"], ["created_at", "2021-09-19 08:36:13.159322"], ["updated_at", "2021-09-19 08:36:13.159322"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 0], ["name_id", 0], ["weight", 24.0], ["reps_count", 20], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 42.01], ["date", "2021-09-17"], ["created_at", "2021-09-19 08:36:13.164137"], ["updated_at", "2021-09-19 08:36:13.164137"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 0], ["name_id", 0], ["weight", 26.0], ["reps_count", 15], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 39.23], ["date", "2021-09-18"], ["created_at", "2021-09-19 08:36:13.170186"], ["updated_at", "2021-09-19 08:36:13.170186"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 0], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 0], ["name_id", 0], ["weight", 28.0], ["reps_count", 12], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 38.63], ["date", "2021-09-19"], ["created_at", "2021-09-19 08:36:13.175510"], ["updated_at", "2021-09-19 08:36:13.175510"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 1], ["name_id", 1], ["weight", 22.0], ["reps_count", 10], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 28.6], ["date", "2021-09-20"], ["created_at", "2021-09-19 08:36:13.180679"], ["updated_at", "2021-09-19 08:36:13.180679"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 1], ["name_id", 1], ["weight", 24.0], ["reps_count", 8], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 29.41], ["date", "2021-09-21"], ["created_at", "2021-09-19 08:36:13.186722"], ["updated_at", "2021-09-19 08:36:13.186722"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 1], ["name_id", 1], ["weight", 22.0], ["reps_count", 12], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 30.35], ["date", "2021-09-22"], ["created_at", "2021-09-19 08:36:13.192746"], ["updated_at", "2021-09-19 08:36:13.192746"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 1], ["name_id", 1], ["weight", 26.0], ["reps_count", 8], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 31.86], ["date", "2021-09-23"], ["created_at", "2021-09-19 08:36:13.198670"], ["updated_at", "2021-09-19 08:36:13.198670"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 1], ["name_id", 1], ["weight", 24.0], ["reps_count", 14], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 35.15], ["date", "2021-09-24"], ["created_at", "2021-09-19 08:36:13.204817"], ["updated_at", "2021-09-19 08:36:13.204817"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 1], ["name_id", 1], ["weight", 22.0], ["reps_count", 18], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 36.3], ["date", "2021-09-25"], ["created_at", "2021-09-19 08:36:13.210438"], ["updated_at", "2021-09-19 08:36:13.210438"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 1], ["name_id", 1], ["weight", 24.0], ["reps_count", 14], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 35.15], ["date", "2021-09-26"], ["created_at", "2021-09-19 08:36:13.216491"], ["updated_at", "2021-09-19 08:36:13.216491"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 1], ["name_id", 1], ["weight", 26.0], ["reps_count", 10], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 33.8], ["date", "2021-09-27"], ["created_at", "2021-09-19 08:36:13.222868"], ["updated_at", "2021-09-19 08:36:13.222868"]]
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 1], ["name_id", 1], ["weight", 24.0], ["reps_count", 16], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 37.31], ["date", "2021-09-28"], ["created_at", "2021-09-19 08:36:13.228936"], ["updated_at", "2021-09-19 08:36:13.228936"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.4ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 1], ["name_id", 1], ["weight", 22.0], ["reps_count", 22], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 40.82], ["date", "2021-09-29"], ["created_at", "2021-09-19 08:36:13.234822"], ["updated_at", "2021-09-19 08:36:13.234822"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 1], ["name_id", 1], ["weight", 26.0], ["reps_count", 12], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 35.87], ["date", "2021-09-30"], ["created_at", "2021-09-19 08:36:13.240521"], ["updated_at", "2021-09-19 08:36:13.240521"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 1], ["name_id", 1], ["weight", 28.0], ["reps_count", 10], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 36.4], ["date", "2021-10-01"], ["created_at", "2021-09-19 08:36:13.245960"], ["updated_at", "2021-09-19 08:36:13.245960"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 1], ["name_id", 1], ["weight", 24.0], ["reps_count", 20], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 42.01], ["date", "2021-10-02"], ["created_at", "2021-09-19 08:36:13.252165"], ["updated_at", "2021-09-19 08:36:13.252165"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 1], ["name_id", 1], ["weight", 26.0], ["reps_count", 15], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 39.23], ["date", "2021-10-03"], ["created_at", "2021-09-19 08:36:13.257478"], ["updated_at", "2021-09-19 08:36:13.257478"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 1], ["name_id", 1], ["weight", 28.0], ["reps_count", 12], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 38.63], ["date", "2021-10-04"], ["created_at", "2021-09-19 08:36:13.273781"], ["updated_at", "2021-09-19 08:36:13.273781"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 2], ["name_id", 2], ["weight", 22.0], ["reps_count", 10], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 28.6], ["date", "2021-10-05"], ["created_at", "2021-09-19 08:36:13.280035"], ["updated_at", "2021-09-19 08:36:13.280035"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 2], ["name_id", 2], ["weight", 24.0], ["reps_count", 8], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 29.41], ["date", "2021-10-06"], ["created_at", "2021-09-19 08:36:13.286256"], ["updated_at", "2021-09-19 08:36:13.286256"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 2], ["name_id", 2], ["weight", 22.0], ["reps_count", 12], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 30.35], ["date", "2021-10-07"], ["created_at", "2021-09-19 08:36:13.292366"], ["updated_at", "2021-09-19 08:36:13.292366"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 2], ["name_id", 2], ["weight", 26.0], ["reps_count", 8], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 31.86], ["date", "2021-10-08"], ["created_at", "2021-09-19 08:36:13.297560"], ["updated_at", "2021-09-19 08:36:13.297560"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 2], ["name_id", 2], ["weight", 24.0], ["reps_count", 14], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 35.15], ["date", "2021-10-09"], ["created_at", "2021-09-19 08:36:13.302976"], ["updated_at", "2021-09-19 08:36:13.302976"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 2], ["name_id", 2], ["weight", 22.0], ["reps_count", 18], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 36.3], ["date", "2021-10-10"], ["created_at", "2021-09-19 08:36:13.308100"], ["updated_at", "2021-09-19 08:36:13.308100"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 2], ["name_id", 2], ["weight", 24.0], ["reps_count", 14], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 35.15], ["date", "2021-10-11"], ["created_at", "2021-09-19 08:36:13.313405"], ["updated_at", "2021-09-19 08:36:13.313405"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 2], ["name_id", 2], ["weight", 26.0], ["reps_count", 10], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 33.8], ["date", "2021-10-12"], ["created_at", "2021-09-19 08:36:13.318486"], ["updated_at", "2021-09-19 08:36:13.318486"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 2], ["name_id", 2], ["weight", 24.0], ["reps_count", 16], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 37.31], ["date", "2021-10-13"], ["created_at", "2021-09-19 08:36:13.323837"], ["updated_at", "2021-09-19 08:36:13.323837"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 2], ["name_id", 2], ["weight", 22.0], ["reps_count", 22], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 40.82], ["date", "2021-10-14"], ["created_at", "2021-09-19 08:36:13.328979"], ["updated_at", "2021-09-19 08:36:13.328979"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 2], ["name_id", 2], ["weight", 26.0], ["reps_count", 12], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 35.87], ["date", "2021-10-15"], ["created_at", "2021-09-19 08:36:13.334145"], ["updated_at", "2021-09-19 08:36:13.334145"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 2], ["name_id", 2], ["weight", 28.0], ["reps_count", 10], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 36.4], ["date", "2021-10-16"], ["created_at", "2021-09-19 08:36:13.339942"], ["updated_at", "2021-09-19 08:36:13.339942"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 2], ["name_id", 2], ["weight", 24.0], ["reps_count", 20], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 42.01], ["date", "2021-10-17"], ["created_at", "2021-09-19 08:36:13.345176"], ["updated_at", "2021-09-19 08:36:13.345176"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 2], ["name_id", 2], ["weight", 26.0], ["reps_count", 15], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 39.23], ["date", "2021-10-18"], ["created_at", "2021-09-19 08:36:13.350206"], ["updated_at", "2021-09-19 08:36:13.350206"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 2], ["name_id", 2], ["weight", 28.0], ["reps_count", 12], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 38.63], ["date", "2021-10-19"], ["created_at", "2021-09-19 08:36:13.355111"], ["updated_at", "2021-09-19 08:36:13.355111"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 3], ["name_id", 3], ["weight", 22.0], ["reps_count", 10], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 28.6], ["date", "2021-10-20"], ["created_at", "2021-09-19 08:36:13.360171"], ["updated_at", "2021-09-19 08:36:13.360171"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 3], ["name_id", 3], ["weight", 24.0], ["reps_count", 8], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 29.41], ["date", "2021-10-21"], ["created_at", "2021-09-19 08:36:13.365155"], ["updated_at", "2021-09-19 08:36:13.365155"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 3], ["name_id", 3], ["weight", 22.0], ["reps_count", 12], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 30.35], ["date", "2021-10-22"], ["created_at", "2021-09-19 08:36:13.370391"], ["updated_at", "2021-09-19 08:36:13.370391"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 3], ["name_id", 3], ["weight", 26.0], ["reps_count", 8], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 31.86], ["date", "2021-10-23"], ["created_at", "2021-09-19 08:36:13.376253"], ["updated_at", "2021-09-19 08:36:13.376253"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.3ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 3], ["name_id", 3], ["weight", 24.0], ["reps_count", 14], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 35.15], ["date", "2021-10-24"], ["created_at", "2021-09-19 08:36:13.390111"], ["updated_at", "2021-09-19 08:36:13.390111"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 3], ["name_id", 3], ["weight", 22.0], ["reps_count", 18], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 36.3], ["date", "2021-10-25"], ["created_at", "2021-09-19 08:36:13.396316"], ["updated_at", "2021-09-19 08:36:13.396316"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 3], ["name_id", 3], ["weight", 24.0], ["reps_count", 14], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 35.15], ["date", "2021-10-26"], ["created_at", "2021-09-19 08:36:13.401540"], ["updated_at", "2021-09-19 08:36:13.401540"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 3], ["name_id", 3], ["weight", 26.0], ["reps_count", 10], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 33.8], ["date", "2021-10-27"], ["created_at", "2021-09-19 08:36:13.406688"], ["updated_at", "2021-09-19 08:36:13.406688"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 3], ["name_id", 3], ["weight", 24.0], ["reps_count", 16], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 37.31], ["date", "2021-10-28"], ["created_at", "2021-09-19 08:36:13.410973"], ["updated_at", "2021-09-19 08:36:13.410973"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 3], ["name_id", 3], ["weight", 22.0], ["reps_count", 22], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 40.82], ["date", "2021-10-29"], ["created_at", "2021-09-19 08:36:13.415138"], ["updated_at", "2021-09-19 08:36:13.415138"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 3], ["name_id", 3], ["weight", 26.0], ["reps_count", 12], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 35.87], ["date", "2021-10-30"], ["created_at", "2021-09-19 08:36:13.419245"], ["updated_at", "2021-09-19 08:36:13.419245"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 3], ["name_id", 3], ["weight", 28.0], ["reps_count", 10], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 36.4], ["date", "2021-10-31"], ["created_at", "2021-09-19 08:36:13.423265"], ["updated_at", "2021-09-19 08:36:13.423265"]]
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 3], ["name_id", 3], ["weight", 24.0], ["reps_count", 20], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 42.01], ["date", "2021-11-01"], ["created_at", "2021-09-19 08:36:13.427911"], ["updated_at", "2021-09-19 08:36:13.427911"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 3], ["name_id", 3], ["weight", 26.0], ["reps_count", 15], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 39.23], ["date", "2021-11-02"], ["created_at", "2021-09-19 08:36:13.431948"], ["updated_at", "2021-09-19 08:36:13.431948"]]
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mRecord Create (0.2ms)[0m  [1m[32mINSERT INTO "records" ("exercise_id", "name_id", "weight", "reps_count", "note", "RM", "date", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)[0m  [["exercise_id", 3], ["name_id", 3], ["weight", 28.0], ["reps_count", 12], ["note", "Lorem ipsum dolor sit amet, consectetur adipisci elit"], ["RM", 38.63], ["date", "2021-11-03"], ["created_at", "2021-09-19 08:36:13.435964"], ["updated_at", "2021-09-19 08:36:13.435964"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+Started POST "/users/sign_in" for ::1 at 2021-09-19 17:36:24 +0900
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"C4BX0NB1Dm5p9SD1Oad2ktzwwVEDVXp5BL71LOrkrFuOvxgOBYYM4uBifndCbYJz+xRhHKAhjJtHdLXjTG3knw==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sample@sample.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 331ms (ActiveRecord: 0.5ms | Allocations: 64801)
+
+
+Started GET "/" for ::1 at 2021-09-19 17:36:25 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:3
+  Rendered home/index.html.erb within layouts/application (Duration: 2.4ms | Allocations: 1368)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.9ms | Allocations: 448)
+Completed 200 OK in 24ms (Views: 22.4ms | ActiveRecord: 0.1ms | Allocations: 12727)
+
+
+Started GET "/exercises" for ::1 at 2021-09-19 17:36:26 +0900
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.4ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:9
+  Rendered exercises/index.html.erb within layouts/application (Duration: 19.9ms | Allocations: 12009)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.9ms | Allocations: 1041)
+Completed 200 OK in 42ms (Views: 31.0ms | ActiveRecord: 2.9ms | Allocations: 19781)
+
+
+Started GET "/records?exercise_id=3" for ::1 at 2021-09-19 17:36:32 +0900
+Processing by RecordsController#index as HTML
+  Parameters: {"exercise_id"=>"3"}
+  [1m[36mExercise Load (0.3ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" WHERE "exercises"."id" = ? ORDER BY "exercises"."created_at" DESC LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/records_controller.rb:4:in `index'
+  Rendering records/index.html.erb within layouts/application
+  [1m[36mRecord Load (0.5ms)[0m  [1m[34mSELECT "records".* FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/records/index.html.erb:5:in `map'
+  Rendered records/index.html.erb within layouts/application (Duration: 19.3ms | Allocations: 9834)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 1041)
+Completed 200 OK in 37ms (Views: 31.0ms | ActiveRecord: 1.4ms | Allocations: 16754)
+
+
+Started GET "/exercises" for ::1 at 2021-09-19 17:37:37 +0900
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:9
+  Rendered exercises/index.html.erb within layouts/application (Duration: 39.6ms | Allocations: 6838)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.5ms | Allocations: 1041)
+Completed 200 OK in 50ms (Views: 47.8ms | ActiveRecord: 1.5ms | Allocations: 12116)
+
+
+Started GET "/exercises" for ::1 at 2021-09-19 17:41:00 +0900
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:9
+  Rendered exercises/index.html.erb within layouts/application (Duration: 12.3ms | Allocations: 7050)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 1344)
+Completed 200 OK in 26ms (Views: 23.4ms | ActiveRecord: 1.2ms | Allocations: 14008)
+
+
+Started GET "/users/sign_out" for ::1 at 2021-09-19 17:41:02 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/exercises" for ::1 at 2021-09-19 17:42:19 +0900
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.3ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:9
+  Rendered exercises/index.html.erb within layouts/application (Duration: 12.1ms | Allocations: 7084)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.3ms | Allocations: 1198)
+Completed 500 Internal Server Error in 24ms (ActiveRecord: 1.1ms | Allocations: 13958)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <% if user_signed_in? %> 
+  <header>
+    <div class="header_container">
+      <h2>WorkoutGraph | <%= yield(:title) %></h2>
+      <p> ログインユーザー： <%= current_user.name %> さん <p>
+      <div class="navbar">
+        <%= link_to("ログアウト", destroy_user_session_path, method: :delete, {class: "link navbar_li"}) %>
+        <%= link_to("グラフを見る", exercises_path, {class: "link navbar_li"}) %>
+        <%= link_to("新しい種目を記録", new_exercise_path, {class: "link navbar_li"}) %>
+        <%= link_to("既存の種目を記録", new_record_path,{class: "link navbar_li"}) %>
+      </div>
+    </div>
+</header>
+<% else %>
+  <header>
+    <div class="header_container">
+      <h2>WorkoutGraph | <%= yield(:title) %></h2>
+      <p> 現在ログインしていません </p>
+      <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+      <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+    </div>
+  </header>
+<% end %>
+
+):
+1:    <% if user_signed_in? %> 
+2:      <header>
+3:        <div class="header_container">
+4:          <h2>WorkoutGraph | <%= yield(:title) %></h2>
+5:          <p> ログインユーザー： <%= current_user.name %> さん <p>
+6:          <div class="navbar">
+7:            <%= link_to("ログアウト", destroy_user_session_path, method: :delete, {class: "link navbar_li"}) %>
+8:            <%= link_to("グラフを見る", exercises_path, {class: "link navbar_li"}) %>
+9:            <%= link_to("新しい種目を記録", new_exercise_path, {class: "link navbar_li"}) %>
+10:            <%= link_to("既存の種目を記録", new_record_path,{class: "link navbar_li"}) %>
+11:          </div>
+12:        </div>
+13:    </header>
+14:    <% else %>
+15:      <header>
+16:        <div class="header_container">
+17:          <h2>WorkoutGraph | <%= yield(:title) %></h2>
+18:          <p> 現在ログインしていません </p>
+19:          <%= link_to "ログイン", new_user_session_path, class: 'post' %>
+20:          <%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+21:        </div>
+22:      </header>
+23:    <% end %>
+  
+app/views/layouts/_header.html.erb:7: syntax error, unexpected ')', expecting =>
+app/views/layouts/_header.html.erb:14: syntax error, unexpected else, expecting ')'
+app/views/layouts/_header.html.erb:23: syntax error, unexpected end, expecting ')'
+app/views/layouts/_header.html.erb:25: syntax error, unexpected end, expecting ')'
+app/views/layouts/_header.html.erb:7: syntax error, unexpected ')', expecting =>
+app/views/layouts/_header.html.erb:14: syntax error, unexpected else, expecting ')'
+app/views/layouts/_header.html.erb:23: syntax error, unexpected end, expecting ')'
+app/views/layouts/_header.html.erb:25: syntax error, unexpected end, expecting ')'
+app/views/layouts/_header.html.erb:7: syntax error, unexpected ')', expecting =>
+app/views/layouts/_header.html.erb:14: syntax error, unexpected else, expecting ')'
+app/views/layouts/_header.html.erb:23: syntax error, unexpected end, expecting ')'
+app/views/layouts/_header.html.erb:25: syntax error, unexpected end, expecting ')'
+app/views/layouts/_header.html.erb:7: syntax error, unexpected ')', expecting =>
+app/views/layouts/_header.html.erb:14: syntax error, unexpected else, expecting ')'
+app/views/layouts/_header.html.erb:23: syntax error, unexpected end, expecting ')'
+app/views/layouts/_header.html.erb:25: syntax error, unexpected end, expecting ')'
+app/views/layouts/_header.html.erb:7: syntax error, unexpected ')', expecting =>
+app/views/layouts/_header.html.erb:14: syntax error, unexpected else, expecting ')'
+app/views/layouts/_header.html.erb:23: syntax error, unexpected end, expecting ')'
+app/views/layouts/_header.html.erb:25: syntax error, unexpected end, expecting ')'
+app/views/layouts/_header.html.erb:7: syntax error, unexpected ')', expecting =>
+app/views/layouts/_header.html.erb:14: syntax error, unexpected else, expecting ')'
+app/views/layouts/_header.html.erb:23: syntax error, unexpected end, expecting ')'
+app/views/layouts/_header.html.erb:25: syntax error, unexpected end, expecting ')'
+app/views/layouts/application.html.erb:13
+Started GET "/users/sign_out" for ::1 at 2021-09-19 17:42:35 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/exercises" for ::1 at 2021-09-19 17:42:51 +0900
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.1ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:9
+  Rendered exercises/index.html.erb within layouts/application (Duration: 10.7ms | Allocations: 7044)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.5ms | Allocations: 1343)
+Completed 200 OK in 23ms (Views: 20.4ms | ActiveRecord: 1.2ms | Allocations: 14006)
+
+
+Started GET "/users/sign_out" for ::1 at 2021-09-19 17:42:53 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/exercises" for ::1 at 2021-09-19 17:43:21 +0900
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:9
+  Rendered exercises/index.html.erb within layouts/application (Duration: 11.4ms | Allocations: 6817)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 1034)
+Completed 200 OK in 22ms (Views: 19.8ms | ActiveRecord: 1.2ms | Allocations: 12072)
+
+
+Started GET "/exercises/new" for ::1 at 2021-09-19 17:43:31 +0900
+Processing by ExercisesController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/exercises_controller.rb:8:in `new'
+  Rendering exercises/new.html.erb within layouts/application
+  Rendered exercises/_exercise_form.html.erb (Duration: 2.4ms | Allocations: 1045)
+  Rendered exercises/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1365)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 141)
+Completed 200 OK in 29ms (Views: 11.8ms | ActiveRecord: 0.2ms | Allocations: 12977)
+
+
+Started GET "/exercises" for ::1 at 2021-09-19 17:43:33 +0900
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.3ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:9
+  Rendered exercises/index.html.erb within layouts/application (Duration: 15.2ms | Allocations: 6818)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.1ms | Allocations: 1034)
+Completed 200 OK in 28ms (Views: 25.4ms | ActiveRecord: 1.4ms | Allocations: 12066)
+
+
+Started GET "/exercises" for ::1 at 2021-09-19 17:43:35 +0900
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.3ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:9
+  Rendered exercises/index.html.erb within layouts/application (Duration: 29.9ms | Allocations: 6817)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.3ms | Allocations: 1035)
+Completed 200 OK in 43ms (Views: 39.4ms | ActiveRecord: 1.5ms | Allocations: 12069)
+
+
+Started GET "/exercises" for ::1 at 2021-09-19 17:43:40 +0900
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.3ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:9
+  Rendered exercises/index.html.erb within layouts/application (Duration: 14.5ms | Allocations: 6815)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.4ms | Allocations: 1034)
+Completed 200 OK in 27ms (Views: 24.3ms | ActiveRecord: 1.5ms | Allocations: 12062)
+
+
+Started GET "/users/sign_out" for ::1 at 2021-09-19 17:44:15 +0900
+  
+ActionController::RoutingError (No route matches [GET] "/users/sign_out"):
+  
+actionpack (6.0.4.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.1.0) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.1.0) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.1.0) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.4.1) lib/rails/rack/logger.rb:37:in `call_app'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.4.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.4.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.2) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.2.3) lib/rack/method_override.rb:24:in `call'
+rack (2.2.3) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.4.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.2.3) lib/rack/sendfile.rb:110:in `call'
+actionpack (6.0.4.1) lib/action_dispatch/middleware/host_authorization.rb:82:in `call'
+webpacker (4.3.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.7.0) lib/rack/proxy.rb:63:in `call'
+railties (6.0.4.1) lib/rails/engine.rb:527:in `call'
+puma (4.3.8) lib/puma/configuration.rb:228:in `call'
+puma (4.3.8) lib/puma/server.rb:718:in `handle_request'
+puma (4.3.8) lib/puma/server.rb:472:in `process_client'
+puma (4.3.8) lib/puma/server.rb:328:in `block in run'
+puma (4.3.8) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/exercises" for ::1 at 2021-09-19 17:44:16 +0900
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.2ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:9
+  Rendered exercises/index.html.erb within layouts/application (Duration: 10.8ms | Allocations: 7044)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.2ms | Allocations: 1368)
+Completed 200 OK in 27ms (Views: 23.6ms | ActiveRecord: 0.9ms | Allocations: 14026)
+
+
+Started GET "/" for ::1 at 2021-09-19 17:45:23 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:3
+  Rendered home/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1136)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.8ms | Allocations: 442)
+Completed 200 OK in 16ms (Views: 14.3ms | ActiveRecord: 0.3ms | Allocations: 7141)
+
+
+Started GET "/" for ::1 at 2021-09-19 17:46:03 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:3
+  Rendered home/index.html.erb within layouts/application (Duration: 3.6ms | Allocations: 1136)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.7ms | Allocations: 443)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.2ms | Allocations: 7133)
+
+
+Started GET "/" for ::1 at 2021-09-19 17:46:04 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:3
+  Rendered home/index.html.erb within layouts/application (Duration: 2.8ms | Allocations: 942)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 136)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.2ms | Allocations: 5246)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-09-19 17:46:35 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"y1RQTguEd+uHsIZU+g0ZzPpelrr9YvHz7a9j2HX0Tca0f86eMaLo1ppHQVD9OZV7ZpNaDdqIMOjTyRL5YjC4uA=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 14ms (ActiveRecord: 0.2ms | Allocations: 6342)
+
+
+Started GET "/" for ::1 at 2021-09-19 17:46:35 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 165)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 104)
+Completed 200 OK in 15ms (Views: 14.8ms | ActiveRecord: 0.0ms | Allocations: 4421)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-09-19 17:46:43 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 1.0ms | Allocations: 641)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 12.6ms | Allocations: 2656)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 128)
+Completed 200 OK in 28ms (Views: 26.9ms | ActiveRecord: 0.0ms | Allocations: 8632)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-09-19 17:46:46 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.8ms | Allocations: 212)
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 124)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 7.1ms | Allocations: 2062)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 128)
+Completed 200 OK in 19ms (Views: 17.9ms | ActiveRecord: 0.0ms | Allocations: 7472)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-09-19 17:46:49 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 134)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1006)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.0ms | Allocations: 128)
+Completed 200 OK in 21ms (Views: 18.1ms | ActiveRecord: 0.0ms | Allocations: 5561)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-09-19 17:46:51 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendering devise/registrations/new.html.erb within layouts/application
+  Rendered devise/shared/_error_messages.html.erb (Duration: 0.1ms | Allocations: 15)
+  Rendered devise/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered devise/registrations/new.html.erb within layouts/application (Duration: 5.0ms | Allocations: 1197)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 122)
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 5696)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-09-19 17:47:00 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.7ms | Allocations: 134)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 5.9ms | Allocations: 997)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 122)
+Completed 200 OK in 20ms (Views: 18.8ms | ActiveRecord: 0.0ms | Allocations: 5544)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-09-19 17:47:10 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"mQekmW3W0Cy4zelp4cN2Rs+/AUIBL8Q1P24QMfxCi2pC+tqoyBuSYOQrQg3baBsmvnnuCVzS6HjhyyiC5Uw9EQ==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sample@sample.com"], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 266ms (ActiveRecord: 0.2ms | Allocations: 4321)
+
+
+Started GET "/" for ::1 at 2021-09-19 17:47:11 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:3
+  Rendered home/index.html.erb within layouts/application (Duration: 1.4ms | Allocations: 947)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 140)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 5251)
+
+
+Started GET "/exercises" for ::1 at 2021-09-19 17:47:13 +0900
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.4ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 3]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 2]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:9
+  Rendered exercises/index.html.erb within layouts/application (Duration: 17.8ms | Allocations: 7045)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 1.7ms | Allocations: 1042)
+Completed 200 OK in 42ms (Views: 38.1ms | ActiveRecord: 1.7ms | Allocations: 13159)
+
+
