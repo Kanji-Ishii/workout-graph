@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_09_01_074610) do
+ActiveRecord::Schema.define(version: 2021_09_19_080701) do
 
   create_table "exercises", force: :cascade do |t|
     t.integer "user_id", null: false
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 2021_09_01_074610) do
     t.float "weight", default: 0.0, null: false
     t.integer "reps_count", default: 0, null: false
     t.text "note", default: ""
-    t.float "RM", default: 0.0, null: false
+    t.decimal "RM", precision: 5, scale: 2, default: "0.0", null: false
     t.date "date", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
