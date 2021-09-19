@@ -40233,3 +40233,330 @@ Processing by ExercisesController#index as HTML
 Completed 200 OK in 39ms (Views: 37.0ms | ActiveRecord: 0.8ms | Allocations: 25136)
 
 
+Started DELETE "/users/sign_out" for ::1 at 2021-09-19 22:19:58 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"WrJcL+dnrth0qv2vLdMXxmw8VTvMO/UfIb6XPI4neIIA1W2hl3Rq52DIQx9iNVPXwYOsBZIYvxH40YPK5rHZpA=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 54ms (ActiveRecord: 0.8ms | Allocations: 61574)
+
+
+Started GET "/" for ::1 at 2021-09-19 22:19:58 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 519)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.2ms | Allocations: 421)
+Completed 200 OK in 96ms (Views: 93.4ms | ActiveRecord: 0.0ms | Allocations: 30939)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-09-19 22:20:01 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 1.0ms | Allocations: 638)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 8.3ms | Allocations: 3071)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 128)
+Completed 200 OK in 19ms (Views: 17.8ms | ActiveRecord: 0.0ms | Allocations: 9645)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-09-19 22:20:11 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"Dq3cwMXI2pyghn+opOaCa9guXgweq9sUCe362Ux8HAVTT89ZH95CkjksMEDzVcC6WYTlj1G7aZEL54sEdDZcNA==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sample@sample.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 270ms (ActiveRecord: 0.3ms | Allocations: 5338)
+
+
+Started GET "/" for ::1 at 2021-09-19 22:20:12 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:3
+  Rendered home/index.html.erb within layouts/application (Duration: 1.6ms | Allocations: 952)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 155)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.1ms | Allocations: 5298)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-09-19 22:20:23 +0900
+Processing by Users::SessionsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1820)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-09-19 22:20:26 +0900
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"/zRyXsbSnETSOMNbEFBw2pWyTKqsdhX0is+lKYF9rDqDtJnqbfUfN/ROKO5PLo2cJD1sCjDeIQsExZBh5RABxg=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 5ms (ActiveRecord: 0.2ms | Allocations: 2147)
+
+
+Started GET "/" for ::1 at 2021-09-19 22:20:26 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 159)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 104)
+Completed 200 OK in 7ms (Views: 6.8ms | ActiveRecord: 0.0ms | Allocations: 4438)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-09-19 22:20:28 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.3ms | Allocations: 134)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 3.0ms | Allocations: 1001)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.5ms | Allocations: 122)
+Completed 200 OK in 15ms (Views: 13.6ms | ActiveRecord: 0.0ms | Allocations: 5590)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-09-19 22:20:39 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"iTg061g/zcl9WCPjmPFEOTAvv1eonLQZCxWvVrwfsCc3l3Uc9W63x2JdMTvHVFuRvPUhT8vmlgJew1BhA2G8Lg==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sample@sample.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13:in `create'
+Completed 401 Unauthorized in 263ms (ActiveRecord: 0.3ms | Allocations: 1322)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"iTg061g/zcl9WCPjmPFEOTAvv1eonLQZCxWvVrwfsCc3l3Uc9W63x2JdMTvHVFuRvPUhT8vmlgJew1BhA2G8Lg==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 999)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 79)
+Completed 200 OK in 264ms (Views: 7.9ms | ActiveRecord: 0.0ms | Allocations: 5522)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-09-19 22:22:15 +0900
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"z08rq2Suwa38sZoRHjQjMeFudMfy/wEZ67t0v8ok+wa1UrGZDQvcPbaEyLbf3V9nPDkI6OTsviIHfzXOlFqdxw==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sample@sample.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 267ms (ActiveRecord: 0.6ms | Allocations: 8680)
+
+
+Started GET "/" for ::1 at 2021-09-19 22:22:15 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:3
+  Rendered home/index.html.erb within layouts/application (Duration: 1.9ms | Allocations: 976)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 155)
+Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.3ms | Allocations: 5532)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-09-19 22:24:38 +0900
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"VM3gbAajY+vwS/n+dMQkAOfilWq+JidhLKzjCcKZog+zDEMk67LO7qxq0QbzUFC+e5AJYpaiQE5g6Ae4G384Tw=="}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 12ms (ActiveRecord: 0.9ms | Allocations: 8620)
+
+
+Started GET "/" for ::1 at 2021-09-19 22:24:39 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 0.4ms | Allocations: 173)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 104)
+Completed 200 OK in 30ms (Views: 29.3ms | ActiveRecord: 0.0ms | Allocations: 20340)
+
+
+Started GET "/users/sign_in" for ::1 at 2021-09-19 22:24:44 +0900
+Processing by Users::SessionsController#new as HTML
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.3ms | Allocations: 146)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 1078)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.4ms | Allocations: 128)
+Completed 200 OK in 14ms (Views: 12.4ms | ActiveRecord: 0.0ms | Allocations: 5843)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-09-19 22:25:09 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"tr1+LKi+Zh36nQlG3jkcsD7LaJeLUpc1rGcaO0fQ9XjBv6tBpSx7g2wPZfTfTlruCtF8iaa9QZb8nGG/CWiC6A==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sample@sample.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13:in `create'
+Completed 401 Unauthorized in 275ms (ActiveRecord: 0.2ms | Allocations: 1368)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"tr1+LKi+Zh36nQlG3jkcsD7LaJeLUpc1rGcaO0fQ9XjBv6tBpSx7g2wPZfTfTlruCtF8iaa9QZb8nGG/CWiC6A==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.2ms | Allocations: 134)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 1001)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 79)
+Completed 200 OK in 265ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 5526)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-09-19 22:26:26 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"xa9XoSw4MiaWQcCHyatjTfYCmyz0w7rFTY1bQkil9WY/2MI/clHES98ojvQjd2ugo+iKWvt7wzxx+SjQcOEZGg==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sample@sample.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13:in `create'
+Completed 401 Unauthorized in 261ms (ActiveRecord: 0.2ms | Allocations: 1310)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"xa9XoSw4MiaWQcCHyatjTfYCmyz0w7rFTY1bQkil9WY/2MI/clHES98ojvQjd2ugo+iKWvt7wzxx+SjQcOEZGg==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.1ms | Allocations: 134)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 996)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 79)
+Completed 200 OK in 283ms (Views: 27.0ms | ActiveRecord: 0.0ms | Allocations: 22022)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-09-19 22:27:05 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"s8gu8EV6zAZCCNIvLg8uWcZXgEaNUjNUbNu89Pm+KypJv7tuGxM6awthnFzE0ya0k72RMILqSq1Qr89mwfrHVg==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sample@sample.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13:in `create'
+Completed 401 Unauthorized in 266ms (ActiveRecord: 0.3ms | Allocations: 1298)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"s8gu8EV6zAZCCNIvLg8uWcZXgEaNUjNUbNu89Pm+KypJv7tuGxM6awthnFzE0ya0k72RMILqSq1Qr89mwfrHVg==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.1ms | Allocations: 134)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.6ms | Allocations: 996)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 79)
+Completed 200 OK in 283ms (Views: 27.4ms | ActiveRecord: 0.0ms | Allocations: 21164)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-09-19 22:27:26 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"f4wG2gb3uRpV6x3Bkf0WWbpRL4FQ5KQOnFiK65VAikiF+5NEWJ5PdxyCU7J7IR6077s+919c3fegLPl5rQRmNA==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sample@sample.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13:in `create'
+Completed 401 Unauthorized in 262ms (ActiveRecord: 0.2ms | Allocations: 1303)
+
+
+Processing by Users::SessionsController#new as HTML
+  Parameters: {"authenticity_token"=>"f4wG2gb3uRpV6x3Bkf0WWbpRL4FQ5KQOnFiK65VAikiF+5NEWJ5PdxyCU7J7IR6077s+919c3fegLPl5rQRmNA==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  Rendering users/sessions/new.html.erb within layouts/application
+  Rendered users/shared/_links.html.erb (Duration: 0.1ms | Allocations: 134)
+  Rendered users/sessions/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 996)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.1ms | Allocations: 79)
+Completed 200 OK in 288ms (Views: 34.5ms | ActiveRecord: 0.0ms | Allocations: 21069)
+
+
+Started POST "/users/sign_in" for ::1 at 2021-09-19 22:27:32 +0900
+Processing by Users::SessionsController#create as HTML
+  Parameters: {"authenticity_token"=>"hrxV8DR8fNrgFVKIAI1unW1zO64GLGytWx/aYrU0Lmd8y8BuahWKt6l8HPvqUWZwOJkq2AmUFVRna6nwjXDCGw==", "user"=>{"email"=>"sample@sample.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sample@sample.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users/sessions_controller.rb:13:in `create'
+Redirected to http://localhost:3000/
+Completed 302 Found in 263ms (ActiveRecord: 0.2ms | Allocations: 2110)
+
+
+Started GET "/" for ::1 at 2021-09-19 22:27:33 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:3
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 944)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 155)
+Completed 200 OK in 7ms (Views: 6.7ms | ActiveRecord: 0.1ms | Allocations: 5273)
+
+
+Started GET "/exercises" for ::1 at 2021-09-19 22:27:39 +0900
+Processing by ExercisesController#index as HTML
+  Rendering exercises/index.html.erb within layouts/application
+  [1m[36mExercise Load (0.4ms)[0m  [1m[34mSELECT "exercises".* FROM "exercises" ORDER BY "exercises"."created_at" DESC[0m
+  ↳ app/views/exercises/index.html.erb:3:in `map'
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 1]]
+  ↳ app/views/exercises/index.html.erb:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "records"."date", "records"."RM" FROM "records" WHERE "records"."name_id" = ? ORDER BY "records"."created_at" DESC[0m  [["name_id", 0]]
+  ↳ app/views/exercises/index.html.erb:9
+  Rendered exercises/index.html.erb within layouts/application (Duration: 16.6ms | Allocations: 8868)
+[Webpacker] Everything's up-to-date. Nothing to do
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_header.html.erb:1
+  Rendered layouts/_header.html.erb (Duration: 2.6ms | Allocations: 1052)
+Completed 200 OK in 39ms (Views: 31.8ms | ActiveRecord: 2.4ms | Allocations: 16578)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2021-09-19 22:35:12 +0900
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Users::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"QftHOYSzr9czs4fTmThEWUGE2sad8yfeay6NLL+Z/CVsF/ft5cWXaxy8xof9FXO1D33TzPpqp/s99riz3czKxg=="}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Redirected to http://localhost:3000/
+Completed 302 Found in 68ms (ActiveRecord: 0.6ms | Allocations: 61592)
+
+
+Started GET "/" for ::1 at 2021-09-19 22:35:12 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  Rendered home/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 517)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 1.4ms | Allocations: 421)
+Completed 200 OK in 141ms (Views: 137.8ms | ActiveRecord: 0.0ms | Allocations: 46445)
+
+
+Started GET "/users/sign_up" for ::1 at 2021-09-19 22:35:14 +0900
+Processing by Users::RegistrationsController#new as HTML
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 1.3ms | Allocations: 214)
+  Rendered users/shared/_links.html.erb (Duration: 0.7ms | Allocations: 542)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 25.0ms | Allocations: 3202)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 128)
+Completed 200 OK in 40ms (Views: 38.4ms | ActiveRecord: 0.0ms | Allocations: 9754)
+
+
+Started POST "/users" for ::1 at 2021-09-19 22:35:36 +0900
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"tM2trPKBu/dDGXHPK1o+Z19xWEnlrxUG2MNySumtLe7+VEhgDieObqmVgwnDGISZ5BCCU4qkwkLeOxg7wDSMVg==", "user"=>{"email"=>"rails@sample.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rails@sample.com"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  Rendering users/registrations/new.html.erb within layouts/application
+  Rendered users/shared/_error_messages.html.erb (Duration: 0.5ms | Allocations: 227)
+  Rendered users/shared/_links.html.erb (Duration: 0.2ms | Allocations: 78)
+  Rendered users/registrations/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1225)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.3ms | Allocations: 122)
+Completed 200 OK in 282ms (Views: 8.8ms | ActiveRecord: 0.4ms | Allocations: 14859)
+
+
+Started POST "/users" for ::1 at 2021-09-19 22:37:17 +0900
+Processing by Users::RegistrationsController#create as HTML
+  Parameters: {"authenticity_token"=>"iVtv3sr/cJuO6F/8cOuOYjiLfM/QA/ljLos2O5V59ws2KWmQdcBoqnfzqSZrGPMIeHDInkG3dwhuaxJIBOTv4w==", "user"=>{"email"=>"rails@sample.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"Sign up"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = ? LIMIT ?[0m  [["email", "rails@sample.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "encrypted_password", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["email", "rails@sample.com"], ["encrypted_password", "$2a$12$Qob.NtHUPSL.A1WyuiD.i.xS9rR1oYuc92Ujsb0vchEpu/2qJPcXy"], ["created_at", "2021-09-19 13:37:18.015048"], ["updated_at", "2021-09-19 13:37:18.015048"]]
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 269ms (ActiveRecord: 1.8ms | Allocations: 7165)
+
+
+Started GET "/" for ::1 at 2021-09-19 22:37:18 +0900
+Processing by HomeController#index as HTML
+  Rendering home/index.html.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/home/index.html.erb:3
+  Rendered home/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 950)
+[Webpacker] Everything's up-to-date. Nothing to do
+  Rendered layouts/_header.html.erb (Duration: 0.2ms | Allocations: 153)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.1ms | Allocations: 5295)
+
+
