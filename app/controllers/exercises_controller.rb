@@ -11,8 +11,10 @@ class ExercisesController < ApplicationController
   def create
     @exercise = current_user.exercises.build(exercise_params)
     if @exercise.save
+      flash[:success] = "保存しました"
       redirect_to controller: :records, action: :new
     else
+      flash.now[:danger] = "保存できません"
       render 'new'
     end
   end
@@ -24,16 +26,17 @@ class ExercisesController < ApplicationController
   def update
     @exercise = Exercise.find(params[:id])
     if @exercise.update(exercise_params)
-      #flash[:success] = "種目名を更新しました"
+      flash[:success] = "種目名を更新しました"
       redirect_to controller: :exercises, action: :index
     else
+      flash[:danger] = "更新できません"
       render 'edit'
     end
   end
 
   def destroy
     Exercise.find(params[:id]).destroy
-    #flash[:success] = "削除しました"
+    flash[:success] = "削除しました"
     redirect_to controller: :exercises, action: :index
   end
 
