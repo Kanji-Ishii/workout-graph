@@ -92,21 +92,23 @@ header {
 
 .form-container {
   margin-top: 40px;
-  .label {
-    margin: 0;
-    font-size: 20px;
+  .field {
+    margin: 30px 0;
+    .label {
+      margin: 0;
+      font-size: 20px;
+    }
+    .form-cotroll {
+      border: 1px solid #bbb;
+      width: 60%;
+      font-size: 25px;
+      @include box_sizing;
+    }
+    .action {
+      width: 10%;
+      font-size: 20px;
+    }
   }
-}
-
-input,
-textarea,
-select,
-.uneditable-input {
-  border: 1px solid #bbb;
-  width: 60%;
-  font-size: 25px;
-  margin-bottom: 30px;
-  @include box_sizing;
 }
 
 input {
