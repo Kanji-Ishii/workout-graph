@@ -53,9 +53,19 @@ ja:
         unlock_token: ロック解除用トークン
         updated_at: 更新日
         name: 名前
+      exercise:
+        name: 種目名
+      record:
+        exercise_id: 種目名
+        weight: 重量
+        reps_count: 回数
+        date: 日付
+        note: 備考
     models:
       user: ユーザー
-  devise:
+      exercise: 種目
+      record: 記録
+  users:
     confirmations:
       confirmed: メールアドレスが確認できました。
       new:

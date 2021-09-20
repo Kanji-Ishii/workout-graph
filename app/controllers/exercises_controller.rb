@@ -14,7 +14,6 @@ class ExercisesController < ApplicationController
       flash[:success] = "保存しました"
       redirect_to controller: :records, action: :new
     else
-      flash.now[:danger] = "保存できません"
       render 'new'
     end
   end
@@ -29,7 +28,6 @@ class ExercisesController < ApplicationController
       flash[:success] = "種目名を更新しました"
       redirect_to controller: :exercises, action: :index
     else
-      flash[:danger] = "更新できません"
       render 'edit'
     end
   end

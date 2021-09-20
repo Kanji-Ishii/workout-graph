@@ -1,6 +1,6 @@
 <div class="form-container">
   <%= form_with model: @record, local: true do |f| %>
-    <%# render 'shared/error_messages', object: f.object %>
+    <%= render 'shared/error_messages', object: f.object %>
 
     <div class="field">
       <p class="label"><%= f.label "種目名" %></p>

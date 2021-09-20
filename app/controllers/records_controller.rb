@@ -14,13 +14,9 @@ class RecordsController < ApplicationController
     @record = @exercise.records.build(record_params)
     if @record.save
       flash[:success] = "記録を保存しました"
-      #render 'exercise/index'
       redirect_to controller: :exercises, action: :index
     else
-      flash[:danger] = "記録を保存できません"
-      #render 'home/index'
       render 'new'
-      #else確認のため
     end
   end
   
@@ -34,7 +30,6 @@ class RecordsController < ApplicationController
       flash[:success] = "記録を更新しました"
       redirect_to controller: :exercises, action: :index
     else
-      flash[:danger] = "記録を更新できません"
       render 'edit'
     end
   end

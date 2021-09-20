@@ -6,7 +6,10 @@
     <%= link_to(exercise.name, records_path(exercise_id: exercise.id), class: "link ex_name")%>
     <%= link_to("名前の変更", edit_exercise_path(exercise.id), class: "link ex_option")%>
     <%= link_to("種目を削除", "/exercises/#{exercise.id}", method: :delete, data:{ confirm: "本当に削除しますか？"}, class: "link ex_option") %>
-    <% graph = Record.where(name_id: exercise.id).pluck(:date, :RM) %>
-    <%= line_chart graph, min: 30, max: 45 %>
+    <% record = Record.where(name_id: exercise.id) %>
+    <% graph = record.pluck(:date, :RM) %>
+    <% min_RM = record.pluck(:RM).min - 5 %>
+    <% max_RM = record.pluck(:RM).max + 5 %>
+    <%= line_chart graph, min: min_RM, max: max_RM %>
   </div>
 <% end %>
