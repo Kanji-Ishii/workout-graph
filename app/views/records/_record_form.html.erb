@@ -4,31 +4,31 @@
 
     <div class="field">
       <p class="label"><%= f.label "種目名" %></p>
-      <%= f.collection_select(:name_id, Exercise.all, :id, :name, {prompt: "種目を選択してください"}, class: 'form-control') %>
+      <%= f.collection_select(:name_id, Exercise.all, :id, :name, {prompt: "種目を選択してください"}, class: 'form-controll') %>
     </div>
 
     <div class="field">
       <p class="label"><%= f.label "日付" %></p>
-      <%= f.date_select :date, include_blank: true, selected: Date.today , class: 'form-control'%>
+      <%= f.date_select(:date, {include_blank: true, selected: Date.today} , {class: 'form-controll'})%>
     </div>
 
     <div class="field">
       <p class="label"><%= f.label "重量" %></p>
-      <%= f.number_field :weight, min:0 , class: 'form-control' %>
+      <%= f.number_field :weight, min:0 , class: 'form-controll' %>
     </div>
 
     <div class="field">
       <p class="label"><%= f.label "回数" %></p>
-      <%= f.number_field :reps_count, min:0 , class: 'form-control' %>
+      <%= f.number_field :reps_count, min:0 , class: 'form-controll' %>
     </div>
 
     <div class="field">
       <p class="label"><%= f.label "備考" %></p>
-      <%= f.text_area :note , class: 'form-control' %>
+      <%= f.text_area :note , class: 'form-controll' %>
     </div>
 
-    <div>
-      <%= f.submit "記録を保存" %>
+    <div class="field">
+      <%= f.submit "保存", class: "action" %>
     </div>
 
   <% end %>

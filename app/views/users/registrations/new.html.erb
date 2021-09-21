@@ -7,25 +7,25 @@
 
     <div class="field">
       <p class="label"><%= f.label :email %></p>
-      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-cotroll" %>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: "form-controll" %>
     </div>
 
     <div class="field">
       <p class="label"><%= f.label :name %></p>
-      <%= f.text_field :name, class: "form-cotroll" %>
+      <%= f.text_field :name, class: "form-controll" %>
     </div>
 
     <div class="field">
-      <p class="label"><%= f.label :password %></p>
+      <p class="label"><%= f.label :password %>
       <% if @minimum_password_length %>
       <em>(<%= @minimum_password_length %> 文字以上)</em>
-      <% end %><br />
-      <%= f.password_field :password, autocomplete: "new-password", class: "form-cotroll" %>
+      <% end %></p>
+      <%= f.password_field :password, autocomplete: "new-password", class: "form-controll" %>
     </div>
 
     <div class="field">
       <p class="label"><%= f.label :password_confirmation %></p>
-      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-cotroll" %>
+      <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-controll" %>
     </div>
 
     <div class="field">

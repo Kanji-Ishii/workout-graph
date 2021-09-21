@@ -3,10 +3,10 @@
     <%= render 'shared/error_messages', object: f.object %>
     <div class="field">
       <p class="label"><%= f.label "種目名" %></p>
-      <%= f.text_field( :name, size: 30 , class: 'form-control' ) %>
+      <%= f.text_field( :name, size: 30 , class: 'form-controll' ) %>
     </div>
-    <div>
-      <%= f.submit "決定" %>
+    <div class="field">
+      <%= f.submit "決定", class: "action" %>
     </div>
   <% end %>
 </div>
