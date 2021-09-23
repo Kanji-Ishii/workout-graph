@@ -1,8 +1,8 @@
 # capistranoのバージョン固定
-lock '3.4.0'
+lock '3.16.0'
 
 # デプロイするアプリケーション名
-set :application, 'Workout Graph'
+set :application, 'workout-graph'
 
 # cloneするgitのレポジトリ
 set :repo_url, 'git@github.com:Kanji-Ishii/workout-graph.git'
