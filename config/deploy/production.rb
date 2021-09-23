@@ -2,4 +2,4 @@
 server '52.194.165.105', user: 'kanji', roles: %w{app db web} 
 
 #デプロイするサーバーにsshログインする鍵の情報を記述
-set :ssh_options, keys: '~/.ssh/first_aws_rsa' 
+set :ssh_options, keys: '~/.ssh/my-instance-ssh-key-rsa' 
