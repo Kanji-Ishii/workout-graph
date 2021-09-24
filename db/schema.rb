@@ -12,8 +12,8 @@
 
 ActiveRecord::Schema.define(version: 2021_09_19_080701) do
 
-  create_table "exercises", force: :cascade do |t|
-    t.integer "user_id", null: false
+  create_table "exercises", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.bigint "user_id", null: false
     t.string "name", null: false
     t.integer "records_count", default: 0
     t.datetime "created_at", precision: 6, null: false
@@ -21,12 +21,12 @@ ActiveRecord::Schema.define(version: 2021_09_19_080701) do
     t.index ["user_id"], name: "index_exercises_on_user_id"
   end
 
-  create_table "records", force: :cascade do |t|
-    t.integer "exercise_id", null: false
+  create_table "records", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
+    t.bigint "exercise_id", null: false
     t.integer "name_id", null: false
     t.float "weight", default: 0.0, null: false
     t.integer "reps_count", default: 0, null: false
-    t.text "note", default: ""
+    t.text "note"
     t.decimal "RM", precision: 5, scale: 2, default: "0.0", null: false
     t.date "date", null: false
     t.datetime "created_at", precision: 6, null: false
@@ -34,7 +34,7 @@ ActiveRecord::Schema.define(version: 2021_09_19_080701) do
     t.index ["exercise_id"], name: "index_records_on_exercise_id"
   end
 
-  create_table "users", force: :cascade do |t|
+  create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb3", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
     t.string "reset_password_token"
