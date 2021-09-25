@@ -29,6 +29,6 @@ production:
   encoding: utf8
   pool: 5
   database: pictweet_production
-  username: admin
+  username: root
   password:
   socket: /var/lib/mysql/mysql.sock
