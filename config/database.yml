@@ -27,7 +27,8 @@ test:
 production:
   adapter: mysql2
   encoding: utf8
-  pool: 5
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  timeout: 5000
   database: wg_mysql_production
   username: <%= ENV["DB_USERNAME"] %>
   password: <%= ENV["DB_PASSWORD"] %>
