@@ -28,6 +28,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 gem 'mysql2', '~> 0.5.3'
 gem 'rubyzip', '>= 1.0.0'
 gem 'rake', '~> 13.0', '>= 13.0.6'
+gem 'sassc', '~> 2.4'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
