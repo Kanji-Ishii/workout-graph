@@ -30,6 +30,6 @@ production:
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
   database: wg_mysql_production
-  username: <%= ENV["DB_USERNAME"] %>
-  password: <%= ENV["DB_PASSWORD"] %>
+  username: root
+  password: )q)u$Ld,RF6t
   socket: /var/lib/mysql/mysql.sock
