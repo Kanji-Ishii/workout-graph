@@ -31,5 +31,5 @@ production:
   timeout: 5000
   database: wg_mysql_production
   username: root
-  password: )q)u$Ld,RF6t
+  password: <%= Rails.application.credentials.db[:password] %>
   socket: /var/lib/mysql/mysql.sock
