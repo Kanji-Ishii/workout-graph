@@ -1,6 +1,9 @@
 # capistranoのバージョン固定
 lock '3.16.0'
 
+# capistranoでsudoを実行するにはttyがなければいけない
+set :pty, true
+
 # デプロイするアプリケーション名
 set :application, 'workout-graph'
 
@@ -8,7 +11,7 @@ set :application, 'workout-graph'
 set :repo_url, 'git@github.com:Kanji-Ishii/workout-graph.git'
 
 # deployするブランチ
-set :branch, 'main'
+set :branch, ENV['BRANCH'] || 'main'
 
 # deploy先のディレクトリ
 set :deploy_to, '/var/www/workout-graph'
@@ -27,6 +30,13 @@ set :rbenv_ruby, '2.6.3'
 
 #出力するログのレベル
 set :log_level, :debug
+
+# Nginxの設定ファイル名と置き場所
+set :nginx_config_name, "#{fetch(:application)}.conf"
+set :nginx_sites_enabled_path, "/etc/nginx/conf.d"
+
+append :linked_files, "config/master.key"
+append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "node_modules"
 
 namespace :deploy do
   desc 'Restart application'
